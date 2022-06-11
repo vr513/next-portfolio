@@ -1,0 +1,18 @@
+.iconHome{
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    transition: transform .4s;
+}
+.iconHome2{
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    transition: transform .4s;
+}
+.iconHome:hover{
+    transform: scale(1.5);
+}
+.iconHome2:hover{
+    transform: scale(1.5);
+}
