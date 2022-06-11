@@ -69,10 +69,6 @@ export default Home;
 
 const IconHolder = () => {
 
-    const holder = styled(Flex)`
-        
-    `
-
     return(
         <>
             <Flex
