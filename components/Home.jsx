@@ -68,6 +68,7 @@ const Home = () => {
                     </Flex>
                 </Stack>
                 <Text 
+                    as={"h2"}
                     color={colorSecondary[colorMode]}
                     fontSize={40}
                     fontWeight={600}
