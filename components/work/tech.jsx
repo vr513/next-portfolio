@@ -6,7 +6,7 @@ import {
     Stack,
     SimpleGrid
 } from '@chakra-ui/react'
-import SkillCard from './skillCard';
+import SkillCard from './SkillCard';
 import HTML5 from '../../assets/work/html-5.png'
 import work from './workData';
 
