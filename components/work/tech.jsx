@@ -2,12 +2,10 @@ import {
     useColorMode,
     Heading,
     Text,
-    Flex,
     Stack,
     SimpleGrid
 } from '@chakra-ui/react'
 import SkillCard from './SkillCard';
-import HTML5 from '../../assets/work/html-5.png'
 import work from './workData';
 
 const Tech = () => {
