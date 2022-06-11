@@ -10,13 +10,15 @@ import {
 } from '@chakra-ui/react'
 import Image from 'next/image';
 import UserIcon from "../assets/varadAvatar.png"
-import {BsInstagram} from 'react-icons/bs'
-import {FaLinkedin} from 'react-icons/fa'
-import {HiOutlineMail} from 'react-icons/hi'
-import {AiFillGithub} from 'react-icons/ai'
+import { BsInstagram } from 'react-icons/bs'
+import { FaLinkedin } from 'react-icons/fa'
+import { HiOutlineMail } from 'react-icons/hi'
+import { AiFillGithub } from 'react-icons/ai'
 import Link from "next/link"
 import styles from './styles/Home.module.css'
 import Typewriter from 'typewriter-effect';
+import Hand from "../assets/home/hand.gif"
+import { MotionBox, MotionFlex } from './motion';
 
 
 const Home = () => {
@@ -35,63 +37,92 @@ const Home = () => {
                 alignItems={"center"}
                 className={styles.homeHead}
             >
-                <Stack
-                    as="main"
-                    spacing={8}
-                    justifyContent="center"
-                    alignItems="flex-start"
-                    m="0 auto 4rem auto"
-                    maxWidth="90vw"
-                    px={2}
+                <MotionFlex
+                    opacity="0"
+                    justify="center"
+                    direction="column"
+                    initial={{
+                        opacity: 0,
+                        translateX: 150
+                    }}
+                    animate={{
+                        opacity: 1,
+                        translateX: 0,
+                        transition: {
+                            duration: 0.5
+                        }
+                    }}
                 >
-                    <Flex
-                        flexDirection="row"
-                        justifyContent="flex-start"
+                    <Stack
+                        as="main"
+                        spacing={8}
+                        justifyContent="center"
                         alignItems="flex-start"
+                        m="0 auto 4rem auto"
                         maxWidth="90vw"
+                        px={2}
                     >
                         <Flex
-                            flexDirection="column"
+                            flexDirection="row"
                             justifyContent="flex-start"
                             alignItems="flex-start"
-                            maxWidth="50vw"
+                            maxWidth="90vw"
                         >
-
-                            <Heading bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text' mb={2}>Hi, I'm Varad Rajopadhye</Heading>
-                            <Text
-                                color={colorSecondary[colorMode]}
-                                fontSize={20}
-                            >A tech enthusiast who tries to search and learn for new things every day. I am anambition-driven, goal-oriented person who seeks opportunities in web and full-stack development as well as cloud computing, where I can hone my skills.
-                            </Text>
+                            <Flex
+                                flexDirection="column"
+                                justifyContent="flex-start"
+                                alignItems="flex-start"
+                                maxWidth="50vw"
+                                bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'
+                            >
+                                <Heading 
+                                alignItems={"center"} 
+                                justifyContent={"center"} 
+                                display={"flex"} 
+                                >
+                                    Hey! <Image 
+                                    src={Hand}
+                                    height={"50px"}
+                                    width={"50px"}
+                                    />
+                                </Heading>
+                                <Heading bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text' mb={2}>I'm Varad Rajopadhye</Heading>
+                                <Text
+                                    color={colorSecondary[colorMode]}
+                                    fontSize={20}
+                                >A tech enthusiast who tries to search and learn for new things every day. I am anambition-driven, goal-oriented person who seeks opportunities in web and full-stack development as well as cloud computing, where I can hone my skills.
+                                </Text>
+                            </Flex>
+                            <Image height={200} width={200} src={UserIcon} />
                         </Flex>
-                        <Image height={200} width={200} src={UserIcon} />
-                    </Flex>
-                </Stack>
-                <Text 
-                    as={"h2"}
-                    color={colorSecondary[colorMode]}
-                    fontSize={40}
-                    fontWeight={600}
-                >
-                    {
-                        <Typewriter 
-                        onInit={(typewriter) => {
-                            typewriter.typeString("Full Stack Developer")
-                            .pauseFor(1000)
-                            .deleteAll()
-                            typewriter.typeString("Freelancer")
-                            .pauseFor(1000)
-                            .deleteAll()
-                            typewriter.typeString("Open Source Enthusiast")
-                            .pauseFor(1000)
-                            .deleteAll()
-                            .start()
-                        }}
-                        options={{loop:true}}
-                    />
-                    }
-                </Text>
-                <IconHolder />
+                    </Stack>
+                    <Text
+                        as={"h2"}
+                        color={colorSecondary[colorMode]}
+                        fontSize={40}
+                        fontWeight={600}
+                        textAlign={"center"}
+                    >
+                        {
+                            <Typewriter
+                                onInit={(typewriter) => {
+                                    typewriter.typeString("Full Stack Developer")
+                                        .pauseFor(1000)
+                                        .deleteAll()
+                                    typewriter.typeString("Freelancer")
+                                        .pauseFor(1000)
+                                        .deleteAll()
+                                    typewriter.typeString("Open Source Enthusiast")
+                                        .pauseFor(1000)
+                                        .deleteAll()
+                                        .start()
+                                }}
+                                options={{ loop: true }}
+                            />
+                        }
+                    </Text>
+                    <IconHolder />
+                </MotionFlex>
             </Flex>
         </>
     )
@@ -101,7 +132,7 @@ export default Home;
 
 const IconHolder = () => {
 
-    return(
+    return (
         <>
             <Flex
                 flexDirection={"row"}
@@ -109,16 +140,16 @@ const IconHolder = () => {
                 alignItems={"center"}
             >
                 <Link href={'https://www.instagram.com/vr._513/'}>
-                    <a><BsInstagram className={styles.iconHome}  /></a>
+                    <a><BsInstagram className={styles.iconHome} /></a>
                 </Link>
                 <Link href={'https://www.linkedin.com/in/varad-rajopadhye/'}>
-                    <a><FaLinkedin className={styles.iconHome}  /></a>
+                    <a><FaLinkedin className={styles.iconHome} /></a>
                 </Link>
                 <Link href={'mailto:varad.22010084@viit.ac.in'}>
-                    <a><HiOutlineMail className={styles.iconHome2}  /></a>
+                    <a><HiOutlineMail className={styles.iconHome2} /></a>
                 </Link>
                 <Link href={'https://github.com/vr513'}>
-                    <a><AiFillGithub className={styles.iconHome2}  /></a>
+                    <a><AiFillGithub className={styles.iconHome2} /></a>
                 </Link>
             </Flex>
         </>

@@ -76,9 +76,9 @@ const Container = ({ children }) => {
                             Blog
                         </Button>
                     </Link>
-                    <Link href="/tech-stack" passHref>
+                    <Link href="/work" passHref>
                         <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
-                            Tech - Stack
+                            Work
                         </Button>
                     </Link>
                     <Link href="/story" passHref>
