@@ -1,7 +1,8 @@
 import {
     useColorMode,
     IconButton,
-    Tooltip
+    Tooltip,
+    useColorModeValue
 } from '@chakra-ui/react'
 import lightSwitch from "../assets/audios/lightswitch.mp3"
 import useSound from 'use-sound'
@@ -40,7 +41,7 @@ const DarkModeSwitch = () => {
                 icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
                 onClick={handleClick}
                 color={iconColor[colorMode]}
-                bg={navColor[colorMode]}
+                bg={useColorModeValue('gray.100', 'gray.900')}
             />
         </>
     )

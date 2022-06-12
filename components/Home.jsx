@@ -139,16 +139,16 @@ const IconHolder = () => {
                 justifyContent={"center"}
                 alignItems={"center"}
             >
-                <Link href={'https://www.instagram.com/vr._513/'}>
+                <Link href={'https:/www.instagram.com/vr._513/'}>
                     <a><BsInstagram className={styles.iconHome} /></a>
                 </Link>
-                <Link href={'https://www.linkedin.com/in/varad-rajopadhye/'}>
+                <Link href={'https:/www.linkedin.com/in/varad-rajopadhye/'}>
                     <a><FaLinkedin className={styles.iconHome} /></a>
                 </Link>
                 <Link href={'mailto:varad.22010084@viit.ac.in'}>
                     <a><HiOutlineMail className={styles.iconHome2} /></a>
                 </Link>
-                <Link href={'https://github.com/vr513'}>
+                <Link href={'https:/github.com/vr513'}>
                     <a><AiFillGithub className={styles.iconHome2} /></a>
                 </Link>
             </Flex>

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import NavBar from '../../components/NavBar'
 import {
     useColorMode,
     Heading,
@@ -13,6 +12,7 @@ import {
 } from '@chakra-ui/react'
 import Tech from "../../components/work/tech";
 import Contact from "../../components/work/contact";
+import NavBar from "../../components/NavBar";
 
 const Work = () => {
 
@@ -26,6 +26,10 @@ const Work = () => {
                 flexDirection={'row'}
                 justifyContent={'center'}
                 alignItems={"center"}
+                paddingTop={4}
+                paddingBottom={2}
+                mb={[0, 0, 8]}
+                mx="auto"
             >
                 <Tabs variant='soft-rounded' colorScheme='blue' >
                     <TabList justifyContent={"center"} >

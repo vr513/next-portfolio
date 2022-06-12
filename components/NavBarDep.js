@@ -11,7 +11,7 @@ import styled from '@emotion/styled'
 import UserIcon from "../assets/varadAvatar.png"
 import { Avatar } from '@chakra-ui/react'
 import { FaGithub } from "react-icons/fa";
-import DarkModeSwitch from '../components/DarkModeSwitch'
+import DarkModeSwitch from './DarkModeSwitch'
 import Image from 'next/image'
 
 const Container = ({ children }) => {
