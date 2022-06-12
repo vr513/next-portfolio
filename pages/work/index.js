@@ -1,18 +1,12 @@
 import Head from "next/head";
 import {
-    useColorMode,
-    Heading,
-    Text,
     Flex,
-    Stack,
-    IconButton,
-    styled,
-    chakra,
     Tabs, TabList, TabPanels, Tab, TabPanel
 } from '@chakra-ui/react'
 import Tech from "../../components/work/tech";
-import Contact from "../../components/work/contact";
+import Contact from "../../components/work/Contact";
 import NavBar from "../../components/NavBar";
+import Story from "../../components/work/Story";
 
 const Work = () => {
 
@@ -43,7 +37,7 @@ const Work = () => {
                             <Tech />
                         </TabPanel>
                         <TabPanel>
-                            <p>Developer Story</p>
+                            <Story />
                         </TabPanel>
                         <TabPanel>
                             <p>Certifications</p>

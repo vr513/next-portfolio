@@ -15,8 +15,6 @@ import {
     Button,
     Textarea,
 } from '@chakra-ui/react'
-import Image from 'next/image';
-import icon from "../../assets/contact.png"
 import emailjs from "@emailjs/browser"
 import { useRef } from 'react';
 import Link from 'next/link';
@@ -82,7 +80,7 @@ const Contact = () => {
                                 }}
                                 onClick={sendEmail}
                             >
-                                Send Message <Image style={{ paddingLeft: "10px" }} src={icon} height={"40rem"} width={"42rem"} />
+                                Send Message
                             </Button>
                         </Stack>
                     </form>

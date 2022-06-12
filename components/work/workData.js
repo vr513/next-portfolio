@@ -1,3 +1,4 @@
+// Skills Logos
 import HTML5 from "../../assets/work/html-5.png"
 import Java from "../../assets/work/java.gif"
 import CP from "../../assets/work/c++.png"
@@ -17,11 +18,17 @@ import DO from "../../assets/work/digitalocean.png"
 import NF from "../../assets/work/netlify.jpg"
 import VC from "../../assets/work/vercel.png"
 
+// Comopany Logos
+import Epsitek from '../../assets/work/Epsitek2.png'
+import AngelAI from '../../assets/work/AngelAI.jpg'
+import VIIT from "../../assets/work/viit.png"
+import OT from "../../assets/work/OT.png"
+
 const work = [
     {
         name:"HTML 5",
         image:[HTML5.src],
-        link:"https://developer.mozilla.org/en-US/docs/Glossary/HTML5",
+        link:"https:/developer.mozilla.org/en-US/docs/Glossary/HTML5",
         description:"Web Development",
     },
     {
@@ -39,13 +46,13 @@ const work = [
     {
         name:"React JS",
         image:[React.src],
-        link:"https://nextjs.org//",
+        link:"https://nextjs.org/",
         description:"Web Development",
     },
     {
         name:"Next JS",
         image:[NEXT.src],
-        link:"https://reactjs.org//",
+        link:"https://reactjs.org/",
         description:"Web Development",
     },
     {
@@ -69,13 +76,13 @@ const work = [
     {
         name:"GitHub",
         image:[GH.src],
-        link:"https://docs.github.com/en",
+        link:"https:/docs.github.com/en",
         description:"Collaborative Tools",
     },
     {
         name:"Python",
         image:[PY.src],
-        link:"https://docs.python.org/3/",
+        link:"https:/docs.python.org/3/",
         description:"Web Dev , Scrapping",
     },
     {
@@ -129,3 +136,39 @@ const work = [
 ];
 
 export default work;
+
+export const experience = [
+    {
+        title:"Omikron Technologies",
+        role:"SDE Intern",
+        skills:["React","Web Development","Bootstarp","Database","API"],
+        period:"3 months",
+        alt:"Angel Ai Card",
+        logo:[OT.src]
+    },
+    {
+        title:"Angel Ai",
+        role:"React Developer Intern",
+        skills:["React","Web Development","Bootstarp"],
+        period:"3 months",
+        alt:"Angel Ai Card",
+        logo:[AngelAI.src]
+    },
+    {
+        title:"Epsitek Technologies",
+        role:"Web Developer Intern",
+        skills:["React","Web Development","Bootstarp"],
+        period:"5 months",
+        alt:"Epsitek Card",
+        logo:[Epsitek.src]
+    },
+    {
+        title:"VIIT Summer Intern",
+        role:"Summer Intern",
+        skills:["Python","Web Development"],
+        period:"3 months",
+        alt:"VIIT Card",
+        logo:[VIIT.src]
+    },
+    
+];

@@ -1,10 +1,8 @@
-import { ReactNode } from 'react';
 import {
   Box,
   Flex,
   Avatar,
   HStack,
-  Link,
   IconButton,
   Button,
   Menu,
@@ -20,6 +18,7 @@ import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
 import routes from './routes';
 import DarkModeSwitch from "./DarkModeSwitch"
 import { FaGithub } from "react-icons/fa";
+import Link from 'next/link'
 
 const NavLink = (children) => (
 
@@ -32,7 +31,7 @@ const NavLink = (children) => (
       bg: useColorModeValue('gray.200', 'gray.600'),
     }}
     href={children.route}>
-    {children.name}
+    <a>{children.name}</a>
   </Link>
 );
 
@@ -43,7 +42,7 @@ export default function NavBar() {
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={"10vw"} paddingTop={4}
         paddingBottom={2}
-        mb={[0, 0, 8]} >
+        mb={[0, 0, 2]} >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
