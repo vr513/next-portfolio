@@ -22,7 +22,7 @@ import VC from "../../assets/work/vercel.png"
 import Epsitek from '../../assets/work/Epsitek2.png'
 import AngelAI from '../../assets/work/AngelAI.jpg'
 import VIIT from "../../assets/work/viit.png"
-import OT from "../../assets/work/OT.png"
+import OT from "../../assets/work/omikron.png"
 
 const work = [
     {
