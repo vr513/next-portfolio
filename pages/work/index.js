@@ -4,9 +4,10 @@ import {
     Tabs, TabList, TabPanels, Tab, TabPanel
 } from '@chakra-ui/react'
 import Tech from "../../components/work/tech";
-import Contact from "../../components/work/Contact";
 import NavBar from "../../components/NavBar";
 import Story from "../../components/work/Story";
+import Footer from "../../components/Footer";
+import Contact from "../../components/work/Contact";
 
 const Work = () => {
 
@@ -48,7 +49,7 @@ const Work = () => {
                     </TabPanels>
                 </Tabs>
             </Flex>
-
+            <Footer />
         </>
     )
 }

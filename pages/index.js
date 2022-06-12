@@ -1,6 +1,10 @@
 import Head from 'next/head'
 import Home from '../components/Home';
 import NavBar from '../components/NavBar'
+import Footer from '../components/Footer';
+
+
+
 export default function Index() {
 
   return (
@@ -10,6 +14,7 @@ export default function Index() {
       </Head>
       <NavBar />
       <Home />
+      <Footer />
     </>
   )
 }

@@ -32,7 +32,7 @@ const Home = () => {
         <>
             <Flex
                 flexDirection={'column'}
-                height="70vh"
+                height="75vh"
                 justifyContent={'center'}
                 alignItems={"center"}
                 className={styles.homeHead}
