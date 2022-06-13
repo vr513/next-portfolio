@@ -4,9 +4,6 @@ import {
     Text,
     Flex,
     Stack,
-    IconButton,
-    styled,
-    chakra,
 } from '@chakra-ui/react'
 import Image from 'next/image';
 import UserIcon from "../assets/varadAvatar.png"
@@ -32,10 +29,10 @@ const Home = () => {
         <>
             <Flex
                 flexDirection={'column'}
-                height="75vh"
                 justifyContent={'center'}
                 alignItems={"center"}
                 className={styles.homeHead}
+                minH={["70vh","75vh","75vh"]}
             >
                 <MotionFlex
                     opacity="0"
@@ -58,12 +55,13 @@ const Home = () => {
                         spacing={8}
                         justifyContent="center"
                         alignItems="flex-start"
-                        m="0 auto 4rem auto"
+                        // m="0 auto 4rem auto"
                         maxWidth="90vw"
                         px={2}
+                        mt={["10vh","0","0"]}
                     >
                         <Flex
-                            flexDirection="row"
+                            flexDirection={'row'}
                             justifyContent="flex-start"
                             alignItems="flex-start"
                             maxWidth="90vw"
@@ -89,19 +87,26 @@ const Home = () => {
                                 <Heading bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text' mb={2}>I'm Varad Rajopadhye</Heading>
                                 <Text
                                     color={colorSecondary[colorMode]}
-                                    fontSize={20}
+                                    fontSize={[13,20,20]}
+                                    w={["100%"]}
+                                    fontWeight={[400,600,600]}
+                                    mb={"2rem"}
+                                    textAlign={"justify"}
                                 >A tech enthusiast who tries to search and learn for new things every day. I am anambition-driven, goal-oriented person who seeks opportunities in web and full-stack development as well as cloud computing, where I can hone my skills.
                                 </Text>
                             </Flex>
-                            <Image height={200} width={200} src={UserIcon} />
+                            <Flex className='ImageVarad' alignItems={"center"} justifyContent={"center"} height={"100%"} >
+                                <Image height={200} width={200} src={UserIcon} />
+                            </Flex>
                         </Flex>
                     </Stack>
                     <Text
                         as={"h2"}
                         color={colorSecondary[colorMode]}
-                        fontSize={40}
+                        fontSize={[25,40,40]}
                         fontWeight={600}
                         textAlign={"center"}
+                        mb={"2rem"}
                     >
                         {
                             <Typewriter

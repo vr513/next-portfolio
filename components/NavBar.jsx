@@ -44,6 +44,7 @@ export default function NavBar() {
         paddingBottom={2}
         mb={[0, 0, 2]} >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+          <Flex justifyContent={"left"} >
           <IconButton
             size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -52,19 +53,21 @@ export default function NavBar() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Flex alignItems={'center'}>
+            <Flex alignItems={'center'} justifyContent={"left"} >
               <Menu>
                 <MenuButton
                   as={Button}
                   rounded={'full'}
                   variant={'link'}
                   cursor={'pointer'}
-                  minW={0}>
+                  minW={0}
+                  mx={[4,10,"auto"]}
+                  >
                   <Avatar
-                    size={'md'}
+                    size={['sm','md','md']}
                     src={'https://varadrajopadhye.netlify.app/assets/img/varadAvatar.png'}
                     href="/"
-                    marginX={[1, 2, 4]} name="Varad Rajopadhye"
+                    name="Varad Rajopadhye"
                   />
                 </MenuButton>
                 <MenuList>
@@ -84,6 +87,7 @@ export default function NavBar() {
               ))}
             </HStack>
           </HStack>
+          </Flex>
           <Box>
             <DarkModeSwitch />
             <Link href="https://github.com/vr513">

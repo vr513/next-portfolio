@@ -25,13 +25,14 @@ const Work = () => {
                 paddingBottom={2}
                 mb={[0, 0, 8]}
                 mx="auto"
+                maxW={"100vw"}
             >
-                <Tabs variant='soft-rounded' colorScheme='blue' >
-                    <TabList justifyContent={"center"} >
-                        <Tab>Tech Stack</Tab>
-                        <Tab>Developer Story</Tab>
-                        <Tab>Certifications</Tab>
-                        <Tab>Contact Me</Tab>
+                <Tabs variant='soft-rounded' colorScheme='blue'  >
+                    <TabList justifyContent={"center"} maxW={"100vw"} >
+                        <Tab fontSize={[12,15,15]}>Tech Stack</Tab>
+                        <Tab fontSize={[12,15,15]}>Developer Story</Tab>
+                        <Tab fontSize={[12,15,15]}>Certifications</Tab>
+                        <Tab fontSize={[12,15,15]}>Contact Me</Tab>
                     </TabList>
                     <TabPanels>
                         <TabPanel>
@@ -44,7 +45,9 @@ const Work = () => {
                             <p>Certifications</p>
                         </TabPanel>
                         <TabPanel>
+                            <Flex alignItems={"center"} justifyContent={"center"} flexDirection={'column'}>
                             <Contact />
+                            </Flex>
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
