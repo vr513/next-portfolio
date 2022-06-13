@@ -8,6 +8,7 @@ import NavBar from "../../components/NavBar";
 import Story from "../../components/work/Story";
 import Footer from "../../components/Footer";
 import Contact from "../../components/work/Contact";
+import Certificates from "../../components/certifications/Certificates";
 import useSound from 'use-sound'
 
 import lightSwitch from '../../assets/audios/lightswitch.mp3'
@@ -52,13 +53,14 @@ const Work = () => {
                             <Tech />
                         </TabPanel>
                         <TabPanel>
-
                             <Flex alignItems={"center"} justifyContent={"center"} flexDirection={'column'}>
                                 <Story />
                             </Flex>
                         </TabPanel>
-                        <TabPanel>
-                            <p>Certifications</p>
+                        <TabPanel  >
+                            <Flex alignItems={"center"} justifyContent={"center"} flexDirection={'column'}>
+                            <Certificates />
+                            </Flex>
                         </TabPanel>
                         <TabPanel>
                             <Flex alignItems={"center"} justifyContent={"center"} flexDirection={'column'}>

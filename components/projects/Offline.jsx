@@ -22,6 +22,7 @@ const Offline = () => {
                                     live={repo.live}
                                     stars={repo.stars}
                                     fork={repo.fork}
+                                    showGithubIcon={true}
                                 />
                             </MotionBox>
                         ))}

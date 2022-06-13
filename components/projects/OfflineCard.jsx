@@ -52,6 +52,7 @@ const OfflineCard = (props) => {
     live,
     stars = 0,
     fork,
+    showGitHubIcon = true,
   } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -135,7 +136,7 @@ const OfflineCard = (props) => {
             <Flex justifyContent={"space-between"} width="100%">
               <Tooltip hasArrow label="Github link" placement="top">
                 <HStack>
-                  <Icon as={FiGithub} boxSize="0.9em" mt={"1px"} />
+                  {showGitHubIcon && <Icon as={FiGithub} boxSize="0.9em" mt={"1px"} />}
                   {/* <Link href={url} isExternal> */}
                   <Text
                     fontSize="sm"

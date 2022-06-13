@@ -3,7 +3,7 @@ import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import {
     Flex,
-    Tabs, TabList, TabPanels, Tab, TabPanel
+    Tabs, TabList, TabPanels, Tab, TabPanel, Heading
 } from '@chakra-ui/react'
 import useSound from 'use-sound'
 import lightSwitch from '../../assets/audios/lightswitch.mp3'
@@ -47,7 +47,7 @@ const projects = () => {
                             <Offline />
                         </TabPanel>
                         <TabPanel>
-                            Github Projects
+                            <Heading fontSize={[25,40,40]} >Stay Tuned for GitHub APi integration</Heading>
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
