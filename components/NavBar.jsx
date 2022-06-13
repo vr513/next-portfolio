@@ -82,8 +82,8 @@ export default function NavBar() {
                 as={'nav'}
                 spacing={4}
                 display={{ base: 'none', md: 'flex' }}>
-                {routes.map((link) => (
-                  <NavLink key={link.route} name={link.name} route={link.route} />
+                {routes.map((link,index) => (
+                  <NavLink key={index} name={link.name} route={link.route} />
                 ))}
               </HStack>
             </HStack>
@@ -106,8 +106,8 @@ export default function NavBar() {
         {isOpen ? (
             <Box pb={4} display={{ md: 'none' }}>
               <Stack as={'nav'} spacing={4}>
-                {routes.map((link) => (
-                  <NavLink key={link.route} name={link.name} route={link.route} />
+                {routes.map((link,index) => (
+                  <NavLink key={index} name={link.name} route={link.route} />
                 ))}
               </Stack>
             </Box>

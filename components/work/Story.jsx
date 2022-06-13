@@ -13,7 +13,7 @@ const Story = () => {
             <Stack width={[null, '80vw', '75vw']} >
                 <Heading textAlign={["center", 'left', 'left']}>Professional Experience</Heading>
 
-                {experience.map((exp) => (
+                {experience.map((exp,index) => (
                     <StoryCard
                         title={exp.title}
                         role={exp.role}
@@ -21,11 +21,12 @@ const Story = () => {
                         period={exp.period}
                         alt={exp.alt}
                         logo={exp.logo[0]}
+                        key={index}
                     />
                 ))}
 
                 <Heading textAlign={["center", 'left', 'left']}>Volunteer Experience</Heading>
-                {volunteerExperience.map((exp) => (
+                {volunteerExperience.map((exp,index) => (
                         <StoryCard
                             title={exp.title}
                             role={exp.role}
@@ -33,6 +34,7 @@ const Story = () => {
                             period={exp.period}
                             alt={exp.alt}
                             logo={exp.logo[0]}
+                            key={index}
                         />
                 ))}
             </Stack>

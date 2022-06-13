@@ -8,9 +8,22 @@ import NavBar from "../../components/NavBar";
 import Story from "../../components/work/Story";
 import Footer from "../../components/Footer";
 import Contact from "../../components/work/Contact";
+import useSound from 'use-sound'
+
+import lightSwitch from '../../assets/audios/lightswitch.mp3'
 
 const Work = () => {
 
+    const [play] = useSound(lightSwitch, {
+        volume: 0.05,
+        sprite: {
+            on: [0, 300],
+            off: [500, 300]
+        }
+    });
+    const handleClick = () => {
+        play({ id: "off" });
+    }
     return (
         <>
             <Head>
@@ -29,10 +42,10 @@ const Work = () => {
             >
                 <Tabs variant='soft-rounded' colorScheme='blue'  >
                     <TabList justifyContent={"center"} maxW={"100vw"} >
-                        <Tab fontSize={[12, 15, 15]}>Tech Stack</Tab>
-                        <Tab fontSize={[12, 15, 15]}>Developer Story</Tab>
-                        <Tab fontSize={[12, 15, 15]}>Certifications</Tab>
-                        <Tab fontSize={[12, 15, 15]}>Contact Me</Tab>
+                        <Tab fontSize={[12, 15, 15]} onClick={handleClick} >Tech Stack</Tab>
+                        <Tab fontSize={[12, 15, 15]} onClick={handleClick}>Developer Story</Tab>
+                        <Tab fontSize={[12, 15, 15]} onClick={handleClick}>Certifications</Tab>
+                        <Tab fontSize={[12, 15, 15]} onClick={handleClick}>Contact Me</Tab>
                     </TabList>
                     <TabPanels>
                         <TabPanel>

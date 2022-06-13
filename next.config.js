@@ -11,5 +11,5 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  
+  "plugins": [["styled-components", { "ssr": true }]]
 }
