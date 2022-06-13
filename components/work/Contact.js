@@ -63,15 +63,15 @@ const Contact = () => {
                 <Box width={["100%","50%","50%"]} bg={formColor[colorMode]} padding={"2rem"} borderRadius='25px' >
                     <form ref={form} >
                         <Stack spacing={4}>
-                            <FormControl id="name" borderColor={inputBorder[colorMode]} >
+                            <FormControl id="name" name={"name"} borderColor={inputBorder[colorMode]} >
                                 <FormLabel>Name</FormLabel>
                                 <Input type="text" />
                             </FormControl>
-                            <FormControl id="email" borderColor={inputBorder[colorMode]}>
+                            <FormControl id="email" name={"email"} borderColor={inputBorder[colorMode]}>
                                 <FormLabel>Email</FormLabel>
                                 <Input type="email" />
                             </FormControl>
-                            <FormControl id="message" borderColor={inputBorder[colorMode]}>
+                            <FormControl id="message" name={"message"} borderColor={inputBorder[colorMode]}>
                                 <FormLabel>Message</FormLabel>
                                 <Textarea type="text" size='sm' />
                             </FormControl>
