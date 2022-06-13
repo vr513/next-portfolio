@@ -32,6 +32,7 @@ const StoryCard = (props) => {
                             bg={useColorModeValue("gray.200", "gray.800")}
                             position="relative"
                             rounded="20px"
+                            my={"0.15rem"}
                         >
                             <Flex justifyContent="space-between">
                                 <Flex>
@@ -83,8 +84,9 @@ const StoryCard = (props) => {
                             <Stack
                                 spacing={1}
                                 mt={3}
-                                isInline
+                                direction={['row']}
                                 alignItems="center"
+                                justifyContent={"flex-start"}
                                 display={["flex", "flex", "none", "none"]}
                             >
                                 {props.skills.map(skill => (

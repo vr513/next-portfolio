@@ -19,10 +19,14 @@ import NF from "../../assets/work/netlify.jpg"
 import VC from "../../assets/work/vercel.png"
 
 // Comopany Logos
-import Epsitek from '../../assets/work/Epsitek2.png'
+import Epsitek from '../../assets/work/ET.jpg'
 import AngelAI from '../../assets/work/AngelAI.jpg'
 import VIIT from "../../assets/work/viit.png"
 import OT from "../../assets/work/omikron.png"
+
+//Volunteer Logos
+import GFG from "../../assets/work/gfg.jpg"
+import IOT from "../../assets/work/IOT.jpg"
 
 const work = [
     {
@@ -172,3 +176,22 @@ export const experience = [
     },
     
 ];
+
+export const volunteerExperience = [
+    {
+        title:"GFG VIIT",
+        role:"Web Master",
+        skills:["Web Development"],
+        period:"1 year",
+        alt:"VIIT Card",
+        logo:[GFG.src]
+    },
+    {
+        title:"IoT Forum",
+        role:"Activity Team Member",
+        skills:[],
+        period:"1 year",
+        alt:"VIIT Card",
+        logo:[IOT.src]
+    },
+]

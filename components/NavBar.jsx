@@ -9,7 +9,6 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
@@ -19,6 +18,7 @@ import routes from './routes';
 import DarkModeSwitch from "./DarkModeSwitch"
 import { FaGithub } from "react-icons/fa";
 import Link from 'next/link'
+import { MotionFlex } from './motion';
 
 const NavLink = (children) => (
 
@@ -45,48 +45,48 @@ export default function NavBar() {
         mb={[0, 0, 2]} >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Flex justifyContent={"left"} >
-          <IconButton
-            size={'md'}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
-            onClick={isOpen ? onClose : onOpen}
-          />
-          <HStack spacing={8} alignItems={'center'}>
-            <Flex alignItems={'center'} justifyContent={"left"} >
-              <Menu>
-                <MenuButton
-                  as={Button}
-                  rounded={'full'}
-                  variant={'link'}
-                  cursor={'pointer'}
-                  minW={0}
-                  mx={[4,10,"auto"]}
+            <IconButton
+              size={'md'}
+              icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+              aria-label={'Open Menu'}
+              display={{ md: 'none' }}
+              onClick={isOpen ? onClose : onOpen}
+            />
+            <HStack spacing={8} alignItems={'center'}>
+              <Flex alignItems={'center'} justifyContent={"left"} >
+                <Menu>
+                  <MenuButton
+                    as={Button}
+                    rounded={'full'}
+                    variant={'link'}
+                    cursor={'pointer'}
+                    minW={0}
+                    mx={[4, 10, "auto"]}
                   >
-                  <Avatar
-                    size={['sm','md','md']}
-                    src={'https://varadrajopadhye.netlify.app/assets/img/varadAvatar.png'}
-                    href="/"
-                    name="Varad Rajopadhye"
-                  />
-                </MenuButton>
-                <MenuList>
-                  <MenuItem>Varad Login</MenuItem>
-                  {/* <MenuItem>Link 2</MenuItem>
+                    <Avatar
+                      size={['sm', 'md', 'md']}
+                      src={'https://varadrajopadhye.netlify.app/assets/img/varadAvatar.png'}
+                      href="/"
+                      name="Varad Rajopadhye"
+                    />
+                  </MenuButton>
+                  <MenuList>
+                    <MenuItem>Varad Login</MenuItem>
+                    {/* <MenuItem>Link 2</MenuItem>
                 <MenuDivider />
                 <MenuItem>Link 3</MenuItem> */}
-                </MenuList>
-              </Menu>
-            </Flex>
-            <HStack
-              as={'nav'}
-              spacing={4}
-              display={{ base: 'none', md: 'flex' }}>
-              {routes.map((link) => (
-                <NavLink key={link.route} name={link.name} route={link.route} />
-              ))}
+                  </MenuList>
+                </Menu>
+              </Flex>
+              <HStack
+                as={'nav'}
+                spacing={4}
+                display={{ base: 'none', md: 'flex' }}>
+                {routes.map((link) => (
+                  <NavLink key={link.route} name={link.name} route={link.route} />
+                ))}
+              </HStack>
             </HStack>
-          </HStack>
           </Flex>
           <Box>
             <DarkModeSwitch />
@@ -104,14 +104,15 @@ export default function NavBar() {
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
-              {routes.map((link) => (
-                <NavLink key={link.route} name={link.name} route={link.route} />
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
+            <Box pb={4} display={{ md: 'none' }}>
+              <Stack as={'nav'} spacing={4}>
+                {routes.map((link) => (
+                  <NavLink key={link.route} name={link.name} route={link.route} />
+                ))}
+              </Stack>
+            </Box>
+          ) : null}
+
       </Box>
     </>
   );
