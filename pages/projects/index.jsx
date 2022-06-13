@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react'
 import useSound from 'use-sound'
 import lightSwitch from '../../assets/audios/lightswitch.mp3'
-import Offline from "../../components/projects/offline";
+import Offline from "../../components/projects/Offline";
 
 
 const projects = () => {
