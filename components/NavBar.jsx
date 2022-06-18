@@ -71,7 +71,7 @@ export default function NavBar() {
                     />
                   </MenuButton>
                   <MenuList>
-                    <MenuItem>Varad Login</MenuItem>
+                    <Link href={'/login'} ><a><MenuItem>Varad Login</MenuItem></a></Link>
                     {/* <MenuItem>Link 2</MenuItem>
                 <MenuDivider />
                 <MenuItem>Link 3</MenuItem> */}
