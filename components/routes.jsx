@@ -14,6 +14,10 @@ const routes = [
     {
         name:"Projects",
         route:"/projects"
+    },
+    {
+        name:"Contact",
+        route:"/contact"
     }
 ];
 
