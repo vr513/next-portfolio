@@ -3,8 +3,20 @@ import P2D from "../../assets/projects/P2dark.png"
 import P2L from "../../assets/projects/P2light.png"
 import OCR from "../../assets/projects/OCR.png"
 import CMS from "../../assets/projects/CMS.png"
+import TIT from "../../assets/projects/TIT.png"
 
 export const repositories =[
+    {
+        title:"Trip-IT",
+        description:"A travel logging app with features like geocoding , ranking , maps etc",
+        cover:[TIT.src],
+        technologies: ["NextJs", "chakraUi","express",'mongoDB'],
+        url: "https://github.com/vr513/tripit-frontend",
+        live: "https://tripit.vercel.app/",
+        blurHash: "L25#he^nryxc^-w$V{V_56bqx[M{",
+        stars: 0,
+        fork: 0
+    },
     {
         title: "PortfolioV1",
         description: "Personal portfolio app to show my skills and experience.",

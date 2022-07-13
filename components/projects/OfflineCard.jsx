@@ -16,18 +16,18 @@ import {
   ModalBody,
   Center,
   Flex,
-  Tooltip
+  Tooltip,
+  Link,
 } from "@chakra-ui/react";
 import { MotionBox } from "../motion";
-import { AiOutlineStar} from "react-icons/ai";
+import { AiOutlineStar } from "react-icons/ai";
 import { FiGithub } from "react-icons/fi";
 import { CardTransition } from "../page-transitions";
 import LazyImage from "../LazyImage";
-import Placeholder from '../../assets/placeholder.png'
+import Placeholder from "../../assets/placeholder.png";
 
-
-const getTagColor = type => {
-  type = type.toLowerCase()
+const getTagColor = (type) => {
+  type = type.toLowerCase();
   if (type === "rails" || type === "ruby") {
     return "red";
   } else if (type === "react") {
@@ -49,7 +49,7 @@ const OfflineCard = (props) => {
     blurHash = "L25#he^nryxc^-w$V{V_56bqx[M{",
     technologies = [],
     url = "#",
-    live,
+    live = "#",
     stars = 0,
     fork,
     showGitHubIcon = true,
@@ -66,7 +66,7 @@ const OfflineCard = (props) => {
     // }
   };
 
-  const handleLinkClick = ( e,link) => {
+  const handleLinkClick = (e, link) => {
     window.open(link);
     e.stopPropagation();
   };
@@ -79,12 +79,12 @@ const OfflineCard = (props) => {
     exit: {
       scale: 0.5,
       opacity: 0,
-      transition: { duration: 1.5, ...transition }
-    }
+      transition: { duration: 1.5, ...transition },
+    },
   };
 
   const imageVariants = {
-    hover: { scale: 1.1 }
+    hover: { scale: 1.1 },
   };
 
   return (
@@ -98,7 +98,7 @@ const OfflineCard = (props) => {
           borderColor={useColorModeValue("gray.200", "gray.700")}
           _hover={{
             shadow: "lg",
-            textDecoration: "none"
+            textDecoration: "none",
           }}
           overflow="hidden"
           align="start"
@@ -123,10 +123,7 @@ const OfflineCard = (props) => {
                     fallback={<Skeleton />}
                     objectFit="cover"
                   /> */}
-                  <LazyImage
-                    src={cover}
-                    blurHash={blurHash}
-                  />
+                  <LazyImage src={cover} blurHash={blurHash} />
                 </AspectRatio>
               </MotionBox>
             </MotionBox>
@@ -134,35 +131,37 @@ const OfflineCard = (props) => {
 
           <VStack py={2} px={[2, 4]} spacing={1} align="start" w="100%">
             <Flex justifyContent={"space-between"} width="100%">
-              <Tooltip hasArrow label="Github link" placement="top">
-                <HStack>
-                  {showGitHubIcon && <Icon as={FiGithub} boxSize="0.9em" mt={"1px"} />}
-                  {/* <Link href={url} isExternal> */}
-                  <Text
-                    fontSize="sm"
-                    noOfLines={1}
-                    fontWeight="600"
-                    align="left"
-                    onClick={e => handleLinkClick(e, url)}
-                  >
-                    {title}
-                  </Text>
-                </HStack>
-              </Tooltip>
+              <HStack>
+                {showGitHubIcon && (
+                  <Link href={url} isExternal>
+                    <Icon boxSize="0.9em" as={FiGithub} mt={"1px"} />
+                  </Link>
+                )}
+                <Tooltip hasArrow label="Visit live site" placement="top">
+                  <Link href={live} isExternal>
+                    <Text
+                      fontSize="sm"
+                      noOfLines={1}
+                      fontWeight="600"
+                      align="left"
+                    >
+                      {title}
+                    </Text>
+                  </Link>
+                </Tooltip>
+              </HStack>
               {/* </Link> */}
               <Flex>
                 <Icon as={AiOutlineStar} boxSize="0.9em" mt={"1px"} />
                 <Box as="span" ml="1" fontSize="sm">
-                  {stars > 0 && (
-                    <>{stars}</>
-                  )}
+                  {stars > 0 && <>{stars}</>}
                 </Box>
               </Flex>
             </Flex>
             <Flex justifyContent={"space-between"} width="100%">
               <Box>
                 <HStack spacing="1">
-                  {technologies.map((tech,index) => (
+                  {technologies.map((tech, index) => (
                     <Tag key={index} size="sm" colorScheme={getTagColor(tech)}>
                       <Text fontSize={["0.55rem", "inherit", "inherit"]}>
                         {tech}

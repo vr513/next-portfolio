@@ -4,6 +4,7 @@ import {
     Text,
     Flex,
     Stack,
+    Link
 } from '@chakra-ui/react'
 import Image from 'next/image';
 import UserIcon from "../assets/varadAvatar.png"
@@ -11,7 +12,6 @@ import { BsInstagram } from 'react-icons/bs'
 import { FaLinkedin } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
 import { AiFillGithub } from 'react-icons/ai'
-import Link from "next/link"
 import styles from './styles/Home.module.css'
 import Typewriter from 'typewriter-effect';
 import Hand from "../assets/home/hand.gif"
@@ -145,16 +145,16 @@ const IconHolder = () => {
                 alignItems={"center"}
             >
                 <Link href={'https:/www.instagram.com/vr._513/'}>
-                    <a><BsInstagram className={styles.iconHome} /></a>
+                    <BsInstagram className={styles.iconHome} />
                 </Link>
                 <Link href={'https:/www.linkedin.com/in/varad-rajopadhye/'}>
-                    <a><FaLinkedin className={styles.iconHome} /></a>
+                    <FaLinkedin className={styles.iconHome} />
                 </Link>
                 <Link href={'mailto:varad.22010084@viit.ac.in'}>
-                    <a><HiOutlineMail className={styles.iconHome2} /></a>
+                    <HiOutlineMail className={styles.iconHome2} />
                 </Link>
                 <Link href={'https:/github.com/vr513'}>
-                    <a><AiFillGithub className={styles.iconHome2} /></a>
+                    <AiFillGithub className={styles.iconHome2} />
                 </Link>
             </Flex>
         </>
