@@ -1,15 +1,16 @@
+import TIT2 from "../../assets/projects/TIT.png"
 import P1 from "../../assets/projects/portfolio1.png"
 import P2D from "../../assets/projects/P2dark.png"
 import P2L from "../../assets/projects/P2light.png"
 import OCR from "../../assets/projects/OCR.png"
 import CMS from "../../assets/projects/CMS.png"
-import TIT from "../../assets/projects/TIT.png"
+
 
 export const repositories =[
     {
         title:"Trip-IT",
         description:"A travel logging app with features like geocoding , ranking , maps etc",
-        cover:[TIT.src],
+        cover:[TIT2.src],
         technologies: ["NextJs", "chakraUi","express",'mongoDB'],
         url: "https://github.com/vr513/tripit-frontend",
         live: "https://tripit.vercel.app/",
