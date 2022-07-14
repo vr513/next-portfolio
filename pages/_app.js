@@ -28,6 +28,18 @@ const GlobalStyle = ({ children }) => {
             min-height: 100vh;
             background: ${colorMode === 'light' ? 'white' : '#171717'};
           }
+          ::-webkit-scrollbar {
+            width: 0.8em;
+          }
+          
+          ::-webkit-scrollbar-thumb {
+            background: ${colorMode === 'gray' ? '#171717' : 'gray'};
+            border-radius: 100vw;
+          }
+          
+          // ::-webkit-scrollbar-thumb:hover {
+          //   background: rgba(31, 30, 30, 0.726);
+          // }
         `}
       />
       {children}

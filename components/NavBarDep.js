@@ -11,7 +11,8 @@ import styled from '@emotion/styled'
 import UserIcon from "../assets/varadAvatar.png"
 import { Avatar } from '@chakra-ui/react'
 import { FaGithub } from "react-icons/fa";
-import DarkModeSwitch from '../components/DarkModeSwitch'
+import DarkModeSwitch from './DarkModeSwitch'
+import Image from 'next/image'
 
 const Container = ({ children }) => {
     const { colorMode } = useColorMode()
@@ -64,7 +65,7 @@ const Container = ({ children }) => {
                 mx="auto"
             >
                 <Box>
-                    <Avatar src={UserIcon} href="/" marginX={[1, 2, 4]} size={"md"} name="Varad Rajopadhye" />
+                    <Avatar src={"https://varadrajopadhye.netlify.app/assets/img/varadAvatar.png"} href="/" marginX={[1, 2, 4]} size={"md"} name="Varad Rajopadhye" />
                     <Link href="/" passHref>
                         <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
                             Home
@@ -75,9 +76,9 @@ const Container = ({ children }) => {
                             Blog
                         </Button>
                     </Link>
-                    <Link href="/tech-stack" passHref>
+                    <Link href="/work" passHref>
                         <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
-                            Tech - Stack
+                            Work
                         </Button>
                     </Link>
                     <Link href="/story" passHref>
