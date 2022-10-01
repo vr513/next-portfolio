@@ -133,9 +133,13 @@ const OfflineCard = (props) => {
             <Flex justifyContent={"space-between"} width="100%">
               <HStack>
                 {showGitHubIcon && (
-                  <Link href={url} isExternal>
-                    <Icon boxSize="0.9em" as={FiGithub} mt={"1px"} />
-                  </Link>
+                  <Tooltip hasArrow label="Visit github repo" placement="left">
+                    <span>
+                      <Link href={url} isExternal>
+                        <Icon boxSize="0.9em" as={FiGithub} mt={"1px"} />
+                      </Link>
+                    </span>
+                  </Tooltip>
                 )}
                 <Tooltip hasArrow label="Visit live site" placement="top">
                   <Link href={live} isExternal>
