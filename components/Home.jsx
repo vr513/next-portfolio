@@ -148,14 +148,14 @@ const IconHolder = () => {
             >
                 <Tooltip hasArrow label="Instagram" placement="bottom">
                     <span>
-                        <Link href={'https:/www.instagram.com/vr._513/'} isExternal >
+                        <Link href={'https://www.instagram.com/vr._513/'} isExternal >
                             <BsInstagram className={styles.iconHome} />
                         </Link>
                     </span>
                 </Tooltip>
                 <Tooltip hasArrow label="Linkedin" placement="bottom">
                     <span>
-                        <Link href={'https:/www.linkedin.com/in/varad-rajopadhye/'} isExternal >
+                        <Link href={'https://www.linkedin.com/in/varad-rajopadhye/'} isExternal >
                             <FaLinkedin className={styles.iconHome} />
                         </Link>
                     </span>
@@ -169,7 +169,7 @@ const IconHolder = () => {
                 </Tooltip>
                 <Tooltip hasArrow label="Github" placement="bottom">
                     <span>
-                        <Link href={'https:/github.com/vr513'} isExternal >
+                        <Link href={'https://github.com/vr513'} isExternal >
                             <AiFillGithub className={styles.iconHome2} />
                         </Link>
                     </span>
