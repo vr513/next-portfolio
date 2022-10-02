@@ -174,9 +174,9 @@ const IconHolder = () => {
                         </Link>
                     </span>
                 </Tooltip>
-                <Tooltip hasArrow label="Resume" placement="bottom">
+                <Tooltip hasArrow label="Resume" placement="bottom" >
                     <span>
-                        <Link href={"/assets/resume.pdf"}>
+                        <Link href={"/assets/resume.pdf"} isExternal>
                             <AiOutlineFile className={styles.iconHome} />
                         </Link>
                     </span>

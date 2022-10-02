@@ -7,11 +7,13 @@ import {
     Stack,
     Image,
   } from '@chakra-ui/react';
+  import { MotionBox } from '../motion';
+  import { item } from "../page-transitions";
     
   export default function Card(props) {
     return (
       <Center py={12}>
-        <Box
+        <MotionBox
           role={'group'}
           p={6}
           maxW={'330px'}
@@ -20,7 +22,10 @@ import {
           boxShadow={'2xl'}
           rounded={'25px'}
           pos={'relative'}
-          zIndex={1}>
+          zIndex={1}
+          whileHover={{ y: -10 }}
+          variants={item}
+          >
           <Box
             rounded={'lg'}
             mt={-12}
@@ -67,7 +72,7 @@ import {
               </Text>
             </Stack>
           </Stack>
-        </Box>
+        </MotionBox>
       </Center>
     );
   }
