@@ -9,15 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.0.2",
-    "@chakra-ui/react": "^2.2.1",
+    "@chakra-ui/icons": "^2.0.4",
+    "@chakra-ui/react": "^2.2.4",
     "@emailjs/browser": "^3.6.2",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@svgr/webpack": "^6.2.1",
     "avataaars": "^2.0.0",
     "blurhash": "^1.1.5",
-    "framer-motion": "3.10.6",
+    "framer-motion": "7.5.1",
     "next": "12.1.6",
     "next-google-fonts": "^2.2.0",
     "react": "18.1.0",

@@ -4,7 +4,8 @@ import {
     Text,
     Flex,
     Stack,
-    Link
+    Link,
+    Tooltip
 } from '@chakra-ui/react'
 import Image from 'next/image';
 import UserIcon from "../assets/varadAvatar.png"
@@ -12,6 +13,7 @@ import { BsInstagram } from 'react-icons/bs'
 import { FaLinkedin } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
 import { AiFillGithub } from 'react-icons/ai'
+import { AiOutlineFile } from 'react-icons/ai';
 import styles from './styles/Home.module.css'
 import Typewriter from 'typewriter-effect';
 import Hand from "../assets/home/hand.gif"
@@ -32,7 +34,7 @@ const Home = () => {
                 justifyContent={'center'}
                 alignItems={"center"}
                 className={styles.homeHead}
-                minH={["70vh","75vh","75vh"]}
+                minH={["70vh", "75vh", "75vh"]}
             >
                 <MotionFlex
                     opacity="0"
@@ -58,7 +60,7 @@ const Home = () => {
                         // m="0 auto 4rem auto"
                         maxWidth="90vw"
                         px={2}
-                        mt={["10vh","0","0"]}
+                        mt={["10vh", "0", "0"]}
                     >
                         <Flex
                             flexDirection={'row'}
@@ -73,23 +75,23 @@ const Home = () => {
                                 maxWidth="50vw"
                                 bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'
                             >
-                                <Heading 
-                                alignItems={"center"} 
-                                justifyContent={"center"} 
-                                display={"flex"} 
+                                <Heading
+                                    alignItems={"center"}
+                                    justifyContent={"center"}
+                                    display={"flex"}
                                 >
-                                    Hey! <Image 
-                                    src={Hand}
-                                    height={"50px"}
-                                    width={"50px"}
+                                    Hey! <Image
+                                        src={Hand}
+                                        height={"50px"}
+                                        width={"50px"}
                                     />
                                 </Heading>
                                 <Heading bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text' mb={2}>I'm Varad Rajopadhye</Heading>
                                 <Text
                                     color={colorSecondary[colorMode]}
-                                    fontSize={[13,20,20]}
+                                    fontSize={[13, 20, 20]}
                                     w={["100%"]}
-                                    fontWeight={[400,600,600]}
+                                    fontWeight={[400, 600, 600]}
                                     mb={"2rem"}
                                     textAlign={"justify"}
                                 >A tech enthusiast who tries to search and learn for new things every day. I am anambition-driven, goal-oriented person who seeks opportunities in web and full-stack development as well as cloud computing, where I can hone my skills.
@@ -103,7 +105,7 @@ const Home = () => {
                     <Text
                         as={"h2"}
                         color={colorSecondary[colorMode]}
-                        fontSize={[25,40,40]}
+                        fontSize={[25, 40, 40]}
                         fontWeight={600}
                         textAlign={"center"}
                         mb={"2rem"}
@@ -144,18 +146,41 @@ const IconHolder = () => {
                 justifyContent={"center"}
                 alignItems={"center"}
             >
-                <Link href={'https:/www.instagram.com/vr._513/'}>
-                    <BsInstagram className={styles.iconHome} />
-                </Link>
-                <Link href={'https:/www.linkedin.com/in/varad-rajopadhye/'}>
-                    <FaLinkedin className={styles.iconHome} />
-                </Link>
-                <Link href={'mailto:varad.22010084@viit.ac.in'}>
-                    <HiOutlineMail className={styles.iconHome2} />
-                </Link>
-                <Link href={'https:/github.com/vr513'}>
-                    <AiFillGithub className={styles.iconHome2} />
-                </Link>
+                <Tooltip hasArrow label="Instagram" placement="bottom">
+                    <span>
+                        <Link href={'https://www.instagram.com/vr._513/'} isExternal >
+                            <BsInstagram className={styles.iconHome} />
+                        </Link>
+                    </span>
+                </Tooltip>
+                <Tooltip hasArrow label="Linkedin" placement="bottom">
+                    <span>
+                        <Link href={'https://www.linkedin.com/in/varad-rajopadhye/'} isExternal >
+                            <FaLinkedin className={styles.iconHome} />
+                        </Link>
+                    </span>
+                </Tooltip>
+                <Tooltip hasArrow label="Mail" placement="bottom">
+                    <span>
+                        <Link href={'mailto:varadrajopadhye@gmail.com'} isExternal >
+                            <HiOutlineMail className={styles.iconHome2} />
+                        </Link>
+                    </span>
+                </Tooltip>
+                <Tooltip hasArrow label="Github" placement="bottom">
+                    <span>
+                        <Link href={'https://github.com/vr513'} isExternal >
+                            <AiFillGithub className={styles.iconHome2} />
+                        </Link>
+                    </span>
+                </Tooltip>
+                <Tooltip hasArrow label="Resume" placement="bottom" >
+                    <span>
+                        <Link href={"/assets/resume.pdf"} isExternal>
+                            <AiOutlineFile className={styles.iconHome} />
+                        </Link>
+                    </span>
+                </Tooltip>
             </Flex>
         </>
     )
