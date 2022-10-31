@@ -7,6 +7,7 @@ import {
 import customTheme from "../styles/theme";
 import { Global, css } from "@emotion/react";
 import Script from "next/script";
+import { Analytics } from '@vercel/analytics/react';
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -78,6 +79,7 @@ function MyApp({ Component, pageProps }) {
           }}
         >
           <GlobalStyle>
+            <Analytics />
             <Component {...pageProps} />
           </GlobalStyle>
         </ColorModeProvider>
