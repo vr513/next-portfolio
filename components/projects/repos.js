@@ -1,9 +1,9 @@
-import TIT22 from "../../assets/projects/TIT22.png"
-import P1 from "../../assets/projects/portfolio1.png"
-import P2D from "../../assets/projects/P2dark.png"
-import P2L from "../../assets/projects/P2light.png"
-import OCR from "../../assets/projects/OCR.png"
-import CMS from "../../assets/projects/CMS.png"
+import TIT22 from "../../assets/projects/TIT22.webp"
+import P1 from "../../assets/projects/portfolio1.webp"
+import P2D from "../../assets/projects/P2dark.webp"
+import P2L from "../../assets/projects/P2light.webp"
+import OCR from "../../assets/projects/OCR.webp"
+import CMS from "../../assets/projects/CMS.webp"
 
 
 export const repositories =[
