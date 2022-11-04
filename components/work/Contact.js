@@ -44,7 +44,7 @@ const Contact = () => {
       reason: reason,
     });
 
-    let response = await fetch("http://varadrajopadhye.tech/api/contact", {
+    let response = await fetch("https://varadrajopadhye.tech/api/contact", {
       method: "POST",
       body: bodyContent,
     });
