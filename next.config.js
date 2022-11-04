@@ -11,5 +11,13 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  async rewrites() {
+        return [
+          {
+            source: '/api/:path*',
+            destination: 'https://varadrajopadhye.tech/:path*',
+          },
+        ]
+      },
   "plugins": [["styled-components", { "ssr": true }]]
 }
