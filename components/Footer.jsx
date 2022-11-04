@@ -34,14 +34,14 @@ const Logo = (props) => {
 
 const SocialButton = (props) => {
     return (
-        <chakra.button
+        <Link href={props.link} isExternal>
+            <chakra.button
             bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
             rounded={'full'}
             w={8}
             h={8}
             cursor={'pointer'}
             as={'a'}
-            href={props.link}
             display={'inline-flex'}
             alignItems={'center'}
             justifyContent={'center'}
@@ -52,6 +52,7 @@ const SocialButton = (props) => {
             <VisuallyHidden>{props.label}</VisuallyHidden>
             {props.icon}
         </chakra.button>
+        </Link>
     );
 };
 
@@ -79,16 +80,16 @@ export default function Footer() {
                 <Text>© 2022. All rights reserved</Text>
                 <Stack direction={'row'} spacing={6}>
                     <SocialButton
-                        label="Instagram" link="#" icon={<FaInstagram />}
+                        label="Instagram" link="https://www.instagram.com/vr._513" icon={<FaInstagram />}
                     />
                     <SocialButton
-                        label="Linkedin" link="#" icon={<FaLinkedin />}
+                        label="Linkedin" link="https://www.linkedin.com/in/varad-rajopadhye" icon={<FaLinkedin />}
                     />
                     <SocialButton
-                        label="Email" link="#" icon={<HiOutlineMail />}
+                        label="Email" link="mailto:varadrajopadhye@gmail.com" icon={<HiOutlineMail />}
                     />
                     <SocialButton
-                        label="Github" link="#" icon={<FaGithub />}
+                        label="Github" link="https://github.com/vr513" icon={<FaGithub />}
                     />
                 </Stack>
             </Container>
