@@ -15,7 +15,7 @@ module.exports = {
         return [
           {
             source: '/api/:path*',
-            destination: 'https://varadrajopadhye.tech/:path*',
+            destination: 'https://varadrajopadhye.tech/api/:path*',
           },
         ]
       },
