@@ -44,7 +44,7 @@ const Contact = () => {
       reason: reason,
     });
 
-    let response = await fetch(`http://localhost:3000`, {
+    let response = await fetch(`http://localhost:3000/api/contact`, {
       method: "POST",
       body: bodyContent,
     });
