@@ -8,7 +8,7 @@ import {
     Tooltip
 } from '@chakra-ui/react'
 import Image from 'next/image';
-import UserIcon from "../assets/varadAvatar.png"
+import UserIcon from "../assets/varadAvatar.webp"
 import { BsInstagram } from 'react-icons/bs'
 import { FaLinkedin } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
@@ -16,7 +16,7 @@ import { AiFillGithub } from 'react-icons/ai'
 import { AiOutlineFile } from 'react-icons/ai';
 import styles from './styles/Home.module.css'
 import Typewriter from 'typewriter-effect';
-import Hand from "../assets/home/hand.gif"
+import Hand from "../assets/home/hand.webp"
 import { MotionBox, MotionFlex } from './motion';
 
 
@@ -84,6 +84,7 @@ const Home = () => {
                                         src={Hand}
                                         height={"50px"}
                                         width={"50px"}
+                                        alt={'Waving hand gif'}
                                     />
                                 </Heading>
                                 <Heading bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text' mb={2}>I'm Varad Rajopadhye</Heading>
@@ -98,7 +99,7 @@ const Home = () => {
                                 </Text>
                             </Flex>
                             <Flex className='ImageVarad' alignItems={"center"} justifyContent={"center"} height={"100%"} >
-                                <Image height={200} width={200} src={UserIcon} />
+                                <Image height={200} width={200} src={UserIcon} alt={"Varad's avataar"} />
                             </Flex>
                         </Flex>
                     </Stack>

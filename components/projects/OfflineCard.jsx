@@ -123,7 +123,7 @@ const OfflineCard = (props) => {
                     fallback={<Skeleton />}
                     objectFit="cover"
                   /> */}
-                  <LazyImage src={cover} blurHash={blurHash} />
+                  <LazyImage src={cover} blurHash={blurHash} alt={`Project Image of ${title}`} />
                 </AspectRatio>
               </MotionBox>
             </MotionBox>
@@ -199,7 +199,7 @@ const OfflineCard = (props) => {
           <ModalContent bg="none" maxW={"28rem"} w="auto">
             <ModalBody p={0} rounded="lg" overflow="hidden" bg="none">
               <Center>
-                <Image src={cover} rounded="lg" />
+                <Image src={cover} rounded="lg" alt={`Project Image of ${title}`} />
                 {/* {type == "image" ? (
                 <Image src={cover} rounded="lg" />
               ) : (
