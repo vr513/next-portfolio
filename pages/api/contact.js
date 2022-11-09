@@ -1,5 +1,5 @@
 const contact = (req, res) => {
-  const body = req.body
+  const body = JSON.parse(req.body);
   let nodemailer = require("nodemailer");
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -49,20 +49,19 @@ const contact = (req, res) => {
   transporter.sendMail(mail1Options, function (err, data) {
     if (err) {
       console.log("Error " + err);
+      res.send({msg:err})
     } else {
-      console.log("Email1 sent successfully");
+      transporter.sendMail(mail2Options, function (err2, data2) {
+        if (err2) {
+          console.log("Error " + err2);
+          res.send({msg:err2})
+        } else {
+          res.send(({msg:{1:data,2:data2}}))
+        }
+      });
     }
   });
 
-  transporter.sendMail(mail2Options, function (err, data) {
-    if (err) {
-      console.log("Error " + err);
-    } else {
-      console.log("Email2 sent successfully");
-    }
-  });
-
-  res.send({ msg: "success" });
 }
 
 export default contact;

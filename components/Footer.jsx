@@ -11,6 +11,7 @@ import {
 import { FaInstagram, FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi'
 import { Avatar } from '@chakra-ui/react';
+import NextLink from 'next/link';
 
 
 const Logo = (props) => {
@@ -34,25 +35,27 @@ const Logo = (props) => {
 
 const SocialButton = (props) => {
     return (
-        <Link href={props.link} isExternal>
-            <chakra.button
-            bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-            rounded={'full'}
-            w={8}
-            h={8}
-            cursor={'pointer'}
-            as={'a'}
-            display={'inline-flex'}
-            alignItems={'center'}
-            justifyContent={'center'}
-            transition={'background 0.3s ease'}
-            _hover={{
-                bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
-            }}>
-            <VisuallyHidden>{props.label}</VisuallyHidden>
-            {props.icon}
-        </chakra.button>
-        </Link>
+        <NextLink href={props.link} legacyBehavior passHref>
+            
+                <Box
+                bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+                rounded={'full'}
+                w={8}
+                h={8}
+                cursor={'pointer'}
+                as={'a'}
+                display={'inline-flex'}
+                alignItems={'center'}
+                justifyContent={'center'}
+                transition={'background 0.3s ease'}
+                _hover={{
+                    bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
+                }}>
+                    <VisuallyHidden>{props.label}</VisuallyHidden>
+                    {props.icon}
+                </Box>
+            
+        </NextLink>
     );
 };
 

@@ -44,7 +44,7 @@ const Contact = () => {
       reason: reason,
     });
 
-    let response = await fetch(`http://localhost:3000/api/contact`, {
+    let response = await fetch(`https://varad-rajopadhye.vercel.app/api/contact`, {
       method: "POST",
       body: bodyContent,
     });
