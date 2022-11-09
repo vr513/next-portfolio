@@ -14,6 +14,7 @@ import {
   Input,
   Button,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
@@ -35,20 +36,76 @@ const Contact = () => {
   const [reason, setReason] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
+  const toast = useToast();
+
+  const showToast1 = () => {
+    toast({
+      title: "Contact Request sent successfully",
+      variant: "solid",
+      status: "success",
+      position: "top-right",
+      isClosable: true,
+    });
+  };
+  const showToast = () => {
+    toast({
+      title: "Error sending email",
+      variant: "solid",
+      status: "error",
+      position: "top-right",
+      isClosable: true,
+    });
+  };
+  const showToast2 = () => {
+    toast({
+      title: "Please fill all feilds",
+      variant: "solid",
+      status: "error",
+      position: "top-right",
+      isClosable: true,
+    });
+  };
+
   const sendEmail = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-    let bodyContent = JSON.stringify({
-      name: name,
-      email: email,
-      reason: reason,
-    });
 
-    let response = await fetch(`https://varad-rajopadhye.vercel.app/api/contact`, {
-      method: "POST",
-      body: bodyContent,
-    });
-    setSubmitting(false);
+    if (
+      name === "" ||
+      name === null ||
+      email === null ||
+      email === "" ||
+      reason === "" ||
+      reason === null
+    ) {
+      showToast2();
+      setSubmitting(false);
+    } else {
+      let bodyContent = JSON.stringify({
+        name: name,
+        email: email,
+        reason: reason,
+      });
+
+      let response = await fetch(
+        `https://varad-rajopadhye.vercel.app/api/contact`,
+        {
+          method: "POST",
+          body: bodyContent,
+        }
+      );
+      let data = await response.json();
+      if (Object.keys(data.msg).length == 2) {
+        showToast1();
+        setSubmitting(false);
+        setTimeout(() => {
+          router.push("/");
+        }, 200);
+      } else {
+        showToast();
+        setSubmitting(false);
+      }
+    }
   };
 
   return (
