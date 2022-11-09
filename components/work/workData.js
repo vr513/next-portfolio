@@ -1,32 +1,32 @@
 // Skills Logos
-import HTML5 from "../../assets/work/html-5.png"
-import Java from "../../assets/work/java.gif"
-import CP from "../../assets/work/c++.png"
-import JS from "../../assets/work/javascript.gif"
-import React from "../../assets/work/react.gif"
-import CSS from "../../assets/work/css3.png"
-import GH from "../../assets/work/github.png"
-import MSQL from "../../assets/work/mysql.png"
-import PY from "../../assets/work/python.gif"
-import CUI from "../../assets/work/chakraUI.jpg"
-import MUI from "../../assets/work/mui.png"
-import NEXT from "../../assets/work/nextjs.png"
-import PM from "../../assets/work/postman.png"
-import VSC from "../../assets/work/vscode.png"
-import HK from "../../assets/work/heroku.png"
-import DO from "../../assets/work/digitalocean.png"
-import NF from "../../assets/work/netlify.jpg"
-import VC from "../../assets/work/vercel.png"
+import HTML5 from "../../assets/work/html-5.webp"
+import Java from "../../assets/work/java.webp"
+import CP from "../../assets/work/c.webp"
+import JS from "../../assets/work/javascript.webp"
+import React from "../../assets/work/react.webp"
+import CSS from "../../assets/work/css3.webp"
+import GH from "../../assets/work/github.webp"
+import MSQL from "../../assets/work/mysql.webp"
+import PY from "../../assets/work/python.webp"
+import CUI from "../../assets/work/chakraUI.webp"
+import MUI from "../../assets/work/mui.webp"
+import NEXT from "../../assets/work/nextjs.webp"
+import PM from "../../assets/work/postman.webp"
+import VSC from "../../assets/work/vscode.webp"
+import HK from "../../assets/work/heroku.webp"
+import DO from "../../assets/work/digitalocean.webp"
+import NF from "../../assets/work/netlify.webp"
+import VC from "../../assets/work/vercel.webp"
 
 // Comopany Logos
-import Epsitek from '../../assets/work/ET.jpg'
-import AngelAI from '../../assets/work/AngelAI.jpg'
-import VIIT from "../../assets/work/viit.png"
-import OT from "../../assets/work/omikron.png"
+import Epsitek from '../../assets/work/ET.webp'
+import AngelAI from '../../assets/work/AngelAI.webp'
+import VIIT from "../../assets/work/viit.webp"
+import OT from "../../assets/work/omikron.webp"
 
 //Volunteer Logos
-import GFG from "../../assets/work/gfg.jpg"
-import IOT from "../../assets/work/IOT.jpg"
+import GFG from "../../assets/work/gfg.webp"
+import IOT from "../../assets/work/IOT.webp"
 
 const work = [
     {

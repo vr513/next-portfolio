@@ -19,20 +19,7 @@ const Tech = () => {
     return (
         <>
             <MotionFlex
-                opacity="0"
-                justify="center"
-                direction="column"
-                initial={{
-                    opacity: 0,
-                    translateX: 150
-                }}
-                animate={{
-                    opacity: 1,
-                    translateX: 0,
-                    transition: {
-                        duration: 0.5
-                    }
-                }}
+                
             >
             <Stack>
                 <Heading textAlign={"center"}>Tech Stack</Heading>

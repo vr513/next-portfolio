@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react';
 import data from "./certificateData";
 
-import UD from "../../assets/work/udemy.png"
+import UD from "../../assets/work/udemy.webp"
 const Certificates = () => {
     return (
         <>

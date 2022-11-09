@@ -1,7 +1,7 @@
-import UD from "../../assets/work/udemy.png";
-import TM from "../../assets/work/TraversyMedia.jpg";
-import UDW from "../../assets/work/udemyWhite.png";
-import GC from "../../assets/work/gcloud.png";
+import UD from "../../assets/work/udemy.webp";
+import TM from "../../assets/work/TraversyMedia.webp";
+import UDW from "../../assets/work/udemyWhite.webp";
+import GC from "../../assets/work/gcloud.webp";
 
 const data = [
   {

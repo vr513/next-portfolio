@@ -37,20 +37,10 @@ const Home = () => {
                 minH={["70vh", "75vh", "75vh"]}
             >
                 <MotionFlex
-                    opacity="0"
+                    
                     justify="center"
                     direction="column"
-                    initial={{
-                        opacity: 0,
-                        translateX: 150
-                    }}
-                    animate={{
-                        opacity: 1,
-                        translateX: 0,
-                        transition: {
-                            duration: 0.5
-                        }
-                    }}
+                    
                 >
                     <Stack
                         as="main"
