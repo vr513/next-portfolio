@@ -19,6 +19,7 @@ import {
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Contact = () => {
   const { colorMode } = useColorMode();
@@ -37,6 +38,7 @@ const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
 
   const toast = useToast();
+  const router = useRouter();
 
   const showToast1 = () => {
     toast({

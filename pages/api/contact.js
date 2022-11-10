@@ -2,11 +2,12 @@ const contact = (req, res) => {
   const body = JSON.parse(req.body);
   let nodemailer = require("nodemailer");
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: process.env.HOST2,
+    port: 587,
+    secure: false, // upgrade later with STARTTLS
     auth: {
-      host: "smtp.gmail.com",
-      user: process.env.EMAIL,
-      pass: process.env.PASSWORD,
+      user: process.env.EMAIL2,
+      pass: process.env.PASSWORD2,
     },
   });
 
@@ -17,7 +18,7 @@ const contact = (req, res) => {
   });
 
   let mail1Options = {
-    from: process.env.EMAIL,
+    from: process.env.EMAIL2,
     to: [process.env.EMAIL],
     subject: `Contact request from ${body.name} email-${body.email}`,
     text: `
@@ -34,10 +35,11 @@ const contact = (req, res) => {
         `,
   };
   let mail2Options = {
-    from: process.env.EMAIL,
+    from: process.env.EMAIL2,
     to: [body.email],
     subject: `Contact request for Varad Rajopadhye`,
-    text: `Hi ${body.name},
+    text: `
+        Hi ${body.name},
         We recieved a contact request from on varadrajopadhye.tech\n
         Thanks for the enquiry. Varad will get in touch with you soon.
         
