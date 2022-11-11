@@ -13,7 +13,7 @@ export const repositories =[
         cover:[TIT22.src],
         technologies: ["NextJs", "chakraUi","express",'mongoDB'],
         url: "https://github.com/vr513/tripit-frontend",
-        live: "https://tripit.vercel.app/",
+        live: "https://tripit.varadrajopadhye.tech/",
         blurHash: "L25#he^nryxc^-w$V{V_56bqx[M{",
         stars: 0,
         fork: 0
@@ -35,7 +35,7 @@ export const repositories =[
         cover: [P2L.src],
         technologies: ["NextJs", "chakraUi"],
         url: "https://github.com/MA-Ahmad/portfolio",
-        live: "https://varad-rajopadhye.vercel.app/",
+        live: "https://varadrajopadhye.tech/",
         blurHash: "L4S~x5xb~q$*~WR6MykCx^Vt4TtP",
         stars: 0,
         fork: 0
@@ -46,7 +46,7 @@ export const repositories =[
         cover: [OCR.src],
         technologies: ["react", "bootstarp","python"],
         url: "https://github.com/vr513/ocr-backend",
-        live: "https://ocr-frontend-delta.vercel.app/convert",
+        live: "https://ocr.varadrajopadhye.tech/",
         blurHash: "L25#he^nryxc^-w$V{V_56bqx[M{",
         stars: 0,
         fork: 0

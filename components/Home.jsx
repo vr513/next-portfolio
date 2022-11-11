@@ -153,7 +153,7 @@ const IconHolder = () => {
                 </Tooltip>
                 <Tooltip hasArrow label="Mail" placement="bottom">
                     <span>
-                        <Link href={'mailto:varadrajopadhye@gmail.com'} isExternal >
+                        <Link href={'mailto:contact@varadrajopadhye.tech'} isExternal >
                             <HiOutlineMail className={styles.iconHome2} />
                         </Link>
                     </span>

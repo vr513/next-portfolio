@@ -89,7 +89,7 @@ export default function Footer() {
                         label="Linkedin" link="https://www.linkedin.com/in/varad-rajopadhye" icon={<FaLinkedin />}
                     />
                     <SocialButton
-                        label="Email" link="mailto:varadrajopadhye@gmail.com" icon={<HiOutlineMail />}
+                        label="Email" link="mailto:contact@varadrajopadhye.tech" icon={<HiOutlineMail />}
                     />
                     <SocialButton
                         label="Github" link="https://github.com/vr513" icon={<FaGithub />}
