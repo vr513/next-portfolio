@@ -31,7 +31,16 @@ const NavLink = (children) => (
       bg: useColorModeValue('gray.200', 'gray.600'),
     }}
     href={children.route}>
-    <a>{children.name}</a>
+    <a>
+      <Box
+        transition={'transform .2s'}
+        fontWeight={600}
+        _hover={{transform : 'scale(1.2)', color:'blue.700'}}
+        fontFamily={'Inter'}
+      >
+        {children.name}
+      </Box>
+    </a>
   </Link>
 );
 
@@ -40,11 +49,14 @@ export default function NavBar() {
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={"10vw"} paddingTop={4}
+      <Box 
+        bgColor={useColorModeValue('gray.100', 'rgba(0,0,0,0)')} 
+        px={"10vw"} 
+        paddingTop={4}
         paddingBottom={2}
         mb={[0, 0, 2]} >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Flex justifyContent={"left"} >
+          <Flex justifyContent={"center"}width={'80% !important'} >
             <IconButton
               size={'md'}
               icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -52,7 +64,7 @@ export default function NavBar() {
               display={{ md: 'none' }}
               onClick={isOpen ? onClose : onOpen}
             />
-            <HStack spacing={8} alignItems={'center'}>
+            <HStack spacing={8} alignItems={'center'} >
               <Flex alignItems={'center'} justifyContent={"left"} >
                 <Menu>
                   <MenuButton
@@ -62,9 +74,11 @@ export default function NavBar() {
                     cursor={'pointer'}
                     minW={0}
                     mx={[4, 10, "auto"]}
+                    position={'absolute'}
+                    left={'10vw'}
                   >
                     <Avatar
-                      size={['sm', 'md', 'md']}
+                      size={['sm', 'md']}
                       src={'https://varadrajopadhye.netlify.app/assets/img/varadAvatar.png'}
                       href="/"
                       name="Varad Rajopadhye"
@@ -72,16 +86,16 @@ export default function NavBar() {
                   </MenuButton>
                   <MenuList>
                     <Link href={'/login'} ><a><MenuItem>Varad Login</MenuItem></a></Link>
-                    {/* <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem> */}
+                    
                   </MenuList>
                 </Menu>
               </Flex>
               <HStack
                 as={'nav'}
-                spacing={4}
-                display={{ base: 'none', md: 'flex' }}>
+                spacing={8}
+                display={{ base: 'none', md: 'flex' }}
+                
+                >
                 {routes.map((link,index) => (
                   <NavLink key={index} name={link.name} route={link.route} />
                 ))}
@@ -89,14 +103,14 @@ export default function NavBar() {
             </HStack>
           </Flex>
           <Box>
-            <DarkModeSwitch />
+            <DarkModeSwitch bgColor={useColorModeValue('gray.100', 'rgba(0,0,0,0)')} />
             <Link href="https://github.com/vr513">
               <a>
                 <IconButton
                   marginX={'1vw'}
                   icon={<FaGithub />}
                   aria-label={"Github Account"}
-                  bg={useColorModeValue('gray.100', 'gray.900')}
+                  bg={useColorModeValue('gray.100', 'rgba(0,0,0,0)')}
                 />
               </a>
             </Link>

@@ -10,7 +10,8 @@ import useSound from 'use-sound'
 import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 
 
-const DarkModeSwitch = () => {
+const DarkModeSwitch = ({bgColor}) => {
+
     const { colorMode, toggleColorMode } = useColorMode()
 
     const navColor = {
@@ -47,7 +48,7 @@ const DarkModeSwitch = () => {
             <Button 
                 leftIcon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
                 color={iconColor[colorMode]}
-                bg={useColorModeValue('gray.100', 'gray.900')}
+                bg={bgColor}
                 onClick={handleClick}
             >{useColorModeValue('Dark Mode', 'Light Mode')}</Button>
         </>

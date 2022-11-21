@@ -34,7 +34,7 @@ const Home = () => {
                 justifyContent={'center'}
                 alignItems={"center"}
                 className={styles.homeHead}
-                minH={["70vh", "75vh", "75vh"]}
+                minH={["70vh", "75vh", "85vh"]}
             >
                 <MotionFlex
                     

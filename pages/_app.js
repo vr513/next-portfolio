@@ -35,7 +35,7 @@ const GlobalStyle = ({ children }) => {
             background: ${colorMode === "light" ? "white" : "#171717"};
           }
           ::-webkit-scrollbar {
-            width: 0.8em;
+            width: 0.5em;
           }
 
           ::-webkit-scrollbar-thumb {
