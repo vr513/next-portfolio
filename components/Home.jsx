@@ -18,6 +18,7 @@ import styles from './styles/Home.module.css'
 import Typewriter from 'typewriter-effect';
 import Hand from "../assets/home/hand.webp"
 import { MotionBox, MotionFlex } from './motion';
+import { useCursor } from './CustomCursor';
 
 
 const Home = () => {
@@ -27,6 +28,8 @@ const Home = () => {
         dark: 'gray.400'
     }
 
+    const {textHoverEnter, textHoverRemove , iconHoverEnter , iconHoverRemove} = useCursor()
+
     return (
         <>
             <Flex
@@ -35,6 +38,7 @@ const Home = () => {
                 alignItems={"center"}
                 className={styles.homeHead}
                 minH={["70vh", "75vh", "85vh"]}
+                cursor={'none'}
             >
                 <MotionFlex
                     
@@ -64,11 +68,14 @@ const Home = () => {
                                 alignItems="flex-start"
                                 maxWidth="50vw"
                                 bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'
+                                
                             >
                                 <Heading
                                     alignItems={"center"}
                                     justifyContent={"center"}
                                     display={"flex"}
+                                    onMouseEnter={textHoverEnter}
+                                    onMouseLeave={textHoverRemove}
                                 >
                                     Hey! <Image
                                         src={Hand}
@@ -77,7 +84,14 @@ const Home = () => {
                                         alt={'Waving hand gif'}
                                     />
                                 </Heading>
-                                <Heading bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text' mb={2}>I'm Varad Rajopadhye</Heading>
+                                <Heading 
+                                    bgGradient='linear(to-l, #7928CA, #FF0080)' 
+                                    bgClip='text' mb={2} 
+                                    onMouseEnter={textHoverEnter}
+                                    onMouseLeave={textHoverRemove}
+                                >
+                                    I'm Varad Rajopadhye
+                                </Heading>
                                 <Text
                                     color={colorSecondary[colorMode]}
                                     fontSize={[13, 20, 20]}
@@ -85,6 +99,8 @@ const Home = () => {
                                     fontWeight={[400, 600, 600]}
                                     mb={"2rem"}
                                     textAlign={"justify"}
+                                    onMouseEnter={textHoverEnter}
+                                    onMouseLeave={textHoverRemove}
                                 >A tech enthusiast who tries to search and learn for new things every day. I am anambition-driven, goal-oriented person who seeks opportunities in web and full-stack development as well as cloud computing, where I can hone my skills.
                                 </Text>
                             </Flex>
@@ -100,6 +116,8 @@ const Home = () => {
                         fontWeight={600}
                         textAlign={"center"}
                         mb={"2rem"}
+                        onMouseEnter={textHoverEnter}
+                        onMouseLeave={textHoverRemove}
                     >
                         {
                             <Typewriter
@@ -119,7 +137,7 @@ const Home = () => {
                             />
                         }
                     </Text>
-                    <IconHolder />
+                    <IconHolder iconHoverEnter={iconHoverEnter} iconHoverRemove={iconHoverRemove} />
                 </MotionFlex>
             </Flex>
         </>
@@ -128,7 +146,7 @@ const Home = () => {
 
 export default Home;
 
-const IconHolder = () => {
+const IconHolder = ({iconHoverEnter , iconHoverRemove}) => {
 
     return (
         <>
@@ -136,38 +154,40 @@ const IconHolder = () => {
                 flexDirection={"row"}
                 justifyContent={"center"}
                 alignItems={"center"}
+                cursor={'none'}
+                _hover={{cursor : 'none'}}
             >
                 <Tooltip hasArrow label="Instagram" placement="bottom">
                     <span>
-                        <Link href={'https://www.instagram.com/vr._513/'} isExternal >
+                        <Link _hover={{cursor : 'none'}} href={'https://www.instagram.com/vr._513/'} onMouseEnter={iconHoverEnter} onMouseLeave={iconHoverRemove} isExternal >
                             <BsInstagram className={styles.iconHome} />
                         </Link>
                     </span>
                 </Tooltip>
                 <Tooltip hasArrow label="Linkedin" placement="bottom">
                     <span>
-                        <Link href={'https://www.linkedin.com/in/varad-rajopadhye/'} isExternal >
+                        <Link _hover={{cursor : 'none'}} href={'https://www.linkedin.com/in/varad-rajopadhye/'} onMouseEnter={iconHoverEnter} onMouseLeave={iconHoverRemove} isExternal >
                             <FaLinkedin className={styles.iconHome} />
                         </Link>
                     </span>
                 </Tooltip>
                 <Tooltip hasArrow label="Mail" placement="bottom">
                     <span>
-                        <Link href={'mailto:contact@varadrajopadhye.tech'} isExternal >
+                        <Link _hover={{cursor : 'none'}} href={'mailto:contact@varadrajopadhye.tech'} onMouseEnter={iconHoverEnter} onMouseLeave={iconHoverRemove} isExternal >
                             <HiOutlineMail className={styles.iconHome2} />
                         </Link>
                     </span>
                 </Tooltip>
                 <Tooltip hasArrow label="Github" placement="bottom">
                     <span>
-                        <Link href={'https://github.com/vr513'} isExternal >
+                        <Link _hover={{cursor : 'none'}} href={'https://github.com/vr513'} onMouseEnter={iconHoverEnter} onMouseLeave={iconHoverRemove} isExternal >
                             <AiFillGithub className={styles.iconHome2} />
                         </Link>
                     </span>
                 </Tooltip>
                 <Tooltip hasArrow label="Resume" placement="bottom" >
                     <span>
-                        <Link href={"/assets/resume.pdf"} isExternal>
+                        <Link _hover={{cursor : 'none'}} href={"/assets/resume.pdf"} onMouseEnter={iconHoverEnter} onMouseLeave={iconHoverRemove} isExternal>
                             <AiOutlineFile className={styles.iconHome} />
                         </Link>
                     </span>

@@ -1,0 +1,36 @@
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #66C8FF;
+    pointer-events: none;
+    z-index: 999;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+}
+.hoverText{
+    background-color: #66c7ff6e;
+    scale: 2.8;
+}
+.hoverIcon{
+    background-color: #66c7ff2c;
+    scale: 4;
+}
+@keyframes cursorAnim {
+    0% {
+    transform: scale(1);
+    }
+    50% {
+    transform: scale(5);
+    }
+    100% {
+    transform: scale(1);
+    opacity: 0;
+    }
+}
+.expand {
+animation: cursorAnim .5s forwards;
+}

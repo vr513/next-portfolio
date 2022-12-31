@@ -8,6 +8,7 @@ import customTheme from "../styles/theme";
 import { Global, css } from "@emotion/react";
 import Script from "next/script";
 import { Analytics } from '@vercel/analytics/react';
+import { CustomCursorProvider } from "../components/CustomCursor";
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -80,7 +81,9 @@ function MyApp({ Component, pageProps }) {
         >
           <GlobalStyle>
             <Analytics />
-            <Component {...pageProps} />
+            <CustomCursorProvider>
+              <Component {...pageProps} />
+            </CustomCursorProvider>
           </GlobalStyle>
         </ColorModeProvider>
       </ChakraProvider>
