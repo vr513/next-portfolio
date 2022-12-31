@@ -11,15 +11,16 @@ import UD from "../../assets/work/udemy.webp"
 const Certificates = () => {
     return (
         <>
-        <SimpleGrid columns={[1, 2, 3]} spacing={4} mt={8}>
+        <SimpleGrid columns={[1, 2, 4]} spacing={4} mt={8}>
             {data.map((item,index) => (
                 <Card 
-                image={item.image}
-                company={item.company}
-                title={item.title}
-                instructor={item.instructor}
-                completed={item.completed}
-                key={index}
+                    image={item.image}
+                    company={item.company}
+                    title={item.title}
+                    instructor={item.instructor}
+                    completed={item.completed}
+                    key={index}
+                    certificateLink={item.certificateLink}
             />
             ))}
         </SimpleGrid>
