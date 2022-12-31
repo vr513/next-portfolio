@@ -51,7 +51,7 @@ export default function NavBar() {
     <>
       <Box 
         bgColor={useColorModeValue('gray.100', 'rgba(0,0,0,0)')} 
-        px={"10vw"} 
+        px={['8vw',"10vw"]} 
         paddingTop={4}
         paddingBottom={2}
         mb={[0, 0, 2]} >
@@ -75,7 +75,7 @@ export default function NavBar() {
                     minW={0}
                     mx={[4, 10, "auto"]}
                     position={'absolute'}
-                    left={'10vw'}
+                    left={['5vw','10vw']}
                   >
                     <Avatar
                       size={['sm', 'md']}
@@ -102,7 +102,7 @@ export default function NavBar() {
               </HStack>
             </HStack>
           </Flex>
-          <Box>
+          <Box display={'flex'} flexDirection={'row'}>
             <DarkModeSwitch bgColor={useColorModeValue('gray.100', 'rgba(0,0,0,0)')} />
             <Link href="https://github.com/vr513">
               <a>

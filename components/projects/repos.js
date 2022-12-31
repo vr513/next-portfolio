@@ -4,7 +4,7 @@ import P2D from "../../assets/projects/P2dark.webp"
 import P2L from "../../assets/projects/P2light.webp"
 import OCR from "../../assets/projects/OCR.webp"
 import CMS from "../../assets/projects/CMS.webp"
-
+import HOO from '../../assets/projects/hooked.webp'
 
 export const repositories =[
     {
@@ -15,6 +15,17 @@ export const repositories =[
         url: "https://github.com/vr513/tripit-frontend",
         live: "https://tripit.varadrajopadhye.tech/",
         blurHash: "L25#he^nryxc^-w$V{V_56bqx[M{",
+        stars: 0,
+        fork: 0
+    },
+    {
+        title:"Hooked",
+        description:"A dating app for young generations",
+        cover:[HOO.src],
+        technologies: ["NextJs", "chakraUi","express",'MYSQL',"firebase"],
+        url: "https://github.com/vr513/hooked-public",
+        live: "https://hooked-da.vercel.app/",
+        blurHash: "L5Q,gw00000e~WX8S2s:pwPnF^V@",
         stars: 0,
         fork: 0
     },
