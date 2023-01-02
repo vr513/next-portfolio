@@ -80,7 +80,7 @@ export default function Footer() {
                     href="/"
                     marginX={[1, 2, 4]} name="Varad Rajopadhye"
                 />
-                <Text>© 2022. All rights reserved</Text>
+                <Text>© 2023. All rights reserved</Text>
                 <Stack direction={'row'} spacing={6}>
                     <SocialButton
                         label="Instagram" link="https://www.instagram.com/vr._513" icon={<FaInstagram />}

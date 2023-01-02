@@ -1,23 +1,28 @@
 const routes = [
     {
         name:"Home",
-        route:'/'
+        route:'/',
+        routeIndex : 0
     },
     {
         name:"Blog",
-        route:'/blog'
+        route:'/blog',
+        routeIndex : 1
     },
     {
         name:'Work',
-        route:'/work'
+        route:'/work',
+        routeIndex : 2
     },
     {
         name:"Projects",
-        route:"/projects"
+        route:"/projects",
+        routeIndex : 3
     },
     {
         name:"Contact",
-        route:"/contact"
+        route:"/contact",
+        routeIndex : 4
     }
 ];
 

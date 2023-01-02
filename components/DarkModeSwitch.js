@@ -50,7 +50,15 @@ const DarkModeSwitch = ({bgColor}) => {
                 color={iconColor[colorMode]}
                 bg={bgColor}
                 onClick={handleClick}
+                display={['none','initial']}
             >{useColorModeValue('Dark Mode', 'Light Mode')}</Button>
+            <Button 
+                leftIcon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
+                color={iconColor[colorMode]}
+                bg={bgColor}
+                onClick={handleClick}
+                display={['initial','none']}
+            ></Button>
         </>
     )
 }

@@ -14,7 +14,7 @@ export const repositories =[
         technologies: ["NextJs", "chakraUi","express",'mongoDB'],
         url: "https://github.com/vr513/tripit-frontend",
         live: "https://tripit.varadrajopadhye.tech/",
-        blurHash: "L25#he^nryxc^-w$V{V_56bqx[M{",
+        blurHash: "L25=OyyGo$R3^bVVjEXUIqS7WCjE",
         stars: 0,
         fork: 0
     },
@@ -36,7 +36,7 @@ export const repositories =[
         technologies: ["HTML", "CSS","Javascript"],
         url: "https://github.com/vr513/portfolio.git",
         live: "https://varadrajopadhye.netlify.app/",
-        blurHash: "L25#he^nryxc^-w$V{V_56bqx[M{",
+        blurHash: "L69*Gy{2D$%18GD,M{WCD$tR?bbb",
         stars: 0,
         fork: 0
     },
@@ -47,7 +47,7 @@ export const repositories =[
         technologies: ["NextJs", "chakraUi"],
         url: "https://github.com/MA-Ahmad/portfolio",
         live: "https://varadrajopadhye.tech/",
-        blurHash: "L4S~x5xb~q$*~WR6MykCx^Vt4TtP",
+        blurHash: "L15Ey?DOD$.l=|M|xux@00.T%NH=",
         stars: 0,
         fork: 0
     },
@@ -58,7 +58,7 @@ export const repositories =[
         technologies: ["react", "bootstarp","python"],
         url: "https://github.com/vr513/ocr-backend",
         live: "https://ocr.varadrajopadhye.tech/",
-        blurHash: "L25#he^nryxc^-w$V{V_56bqx[M{",
+        blurHash: "LTRWemoh}dfNFWfAs;fOxIa$Ecj]",
         stars: 0,
         fork: 0
     },
@@ -69,7 +69,7 @@ export const repositories =[
         technologies: ["SpringBoot Java", "react"],
         url: "https://github.com/vr513/java-Pbl-backend",
         live: "https://course-management.netlify.app/Login",
-        blurHash: "L25#he^nryxc^-w$V{V_56bqx[M{",
+        blurHash: "LRF={?WU00ofD*j[%MfQ00j[~qWC",
         stars: 0,
         fork: 0
     },
