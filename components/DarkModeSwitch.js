@@ -38,13 +38,7 @@ const DarkModeSwitch = ({bgColor}) => {
     }
     return (
         <>
-            {/* <IconButton
-                aria-label="Toggle dark mode"
-                icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
-                onClick={handleClick}
-                color={iconColor[colorMode]}
-                bg={useColorModeValue('gray.100', 'gray.900')}
-            /> */}
+            
             <Button 
                 leftIcon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
                 color={iconColor[colorMode]}
@@ -52,13 +46,14 @@ const DarkModeSwitch = ({bgColor}) => {
                 onClick={handleClick}
                 display={['none','initial']}
             >{useColorModeValue('Dark Mode', 'Light Mode')}</Button>
-            <Button 
-                leftIcon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
+            <IconButton
+                aria-label="Toggle dark mode"
+                icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
+                onClick={handleClick}
                 color={iconColor[colorMode]}
                 bg={bgColor}
-                onClick={handleClick}
                 display={['initial','none']}
-            ></Button>
+            />
         </>
     )
 }

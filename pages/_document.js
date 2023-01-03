@@ -6,6 +6,12 @@ export default class MyDocument extends NextDocument {
         return (
             <Html lang="en">
                 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+                <link
+                href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap"
+                rel="stylesheet"
+                />
             <Head>
             <meta name="description" content="Personal portfolio of Varad Rajopadhye where he posts his tech updates , writes blogs and publishes his projects" />
             <link rel="icon" href="/favicon.ico" />

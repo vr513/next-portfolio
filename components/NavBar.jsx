@@ -132,7 +132,7 @@ export default function NavBar() {
           </Flex>
           <Box display={"flex"} flexDirection={"row"} position={'absolute'} right={'0px'}>
             <DarkModeSwitch
-              bgColor={useColorModeValue("gray.100", "rgba(0,0,0,0)")}
+              bgColor={useColorModeValue("rgba(0,0,0,0)", "rgba(0,0,0,0)")}
             />
             <Link href="https://github.com/vr513">
               <a>
