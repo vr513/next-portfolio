@@ -35,7 +35,7 @@ const data = [
     title: "The MYSQL Bootcamp",
     instructor: "Colt Steele",
     completed: "September 2022",
-    certificateLink: '#'
+    certificateLink: 'https://www.udemy.com/certificate/UC-5b08a801-9839-4596-b4e9-344164715383/'
   },
   {
     image: [UDW.src],
@@ -43,7 +43,7 @@ const data = [
     title: "Data Structures in C/C++",
     instructor: "Abdul Bari",
     completed: "May 2022",
-    certificateLink: '#'
+    certificateLink: '/assets/dsa.pdf'
   },
   {
     image: [LL.src],
@@ -67,7 +67,7 @@ const data = [
     title: "The web developer Bootcamp",
     instructor: "Colt Steele",
     completed: "March 2021",
-    certificateLink: '#'
+    certificateLink: '/assets/webdev.pdf'
   },
 ];
 

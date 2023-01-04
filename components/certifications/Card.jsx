@@ -73,7 +73,7 @@ export default function Card(props) {
             <Text fontWeight={600} fontSize={15}>
               Completed : {props.completed}
             </Text>
-            <Link fontSize={12} _disabled={props.certificateLink === '#' ? true : false} href={props.certificateLink} _hover={{textDecoration : 'none'}}>Show Cerificate credential</Link>
+            <Link fontSize={12} isExternal _disabled={props.certificateLink === '#' ? true : false} href={props.certificateLink} _hover={{textDecoration : 'none'}}>Show Cerificate credential</Link>
           </Stack>
         </Stack>
       </MotionBox>
