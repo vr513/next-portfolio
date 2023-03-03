@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   ChakraProvider,
   ColorModeProvider,
@@ -6,8 +6,8 @@ import {
 } from "@chakra-ui/react";
 import customTheme from "../styles/theme";
 import { Global, css } from "@emotion/react";
-import Script from "next/script";
-import { Analytics } from '@vercel/analytics/react';
+import { getAnalytics } from "firebase/analytics";
+import app from '../components/shared/firebase'
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -55,23 +55,15 @@ const GlobalStyle = ({ children }) => {
 };
 
 function MyApp({ Component, pageProps }) {
+
+  const [analytics , setAnalytics] = useState(null);
+
+  useEffect(() => {
+    setAnalytics(getAnalytics(app));
+  },[])
+
   return (
     <>
-      <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      />
-
-      <Script strategy="lazyOnload">
-        {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-        page_path: window.location.pathname,
-        });
-    `}
-      </Script>
       <ChakraProvider resetCSS theme={customTheme}>
         <ColorModeProvider
           options={{
@@ -80,8 +72,7 @@ function MyApp({ Component, pageProps }) {
           }}
         >
           <GlobalStyle>
-            <Analytics />
-            <Component {...pageProps} />
+            <Component {...pageProps} analytics={analytics} />
           </GlobalStyle>
         </ColorModeProvider>
       </ChakraProvider>

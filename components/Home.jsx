@@ -20,12 +20,19 @@ import Hand from "../assets/home/hand.webp"
 import { MotionBox, MotionFlex } from './motion';
 
 
-const Home = () => {
+const Home = ({analytics}) => {
     const { colorMode } = useColorMode()
     const colorSecondary = {
         light: 'gray.700',
         dark: 'gray.400'
     }
+
+  const checkResumeAnalytics = () => {
+    logEvent(analytics, "check_resume_btn", {
+      content_type: "button",
+      item_id: "check_resume_btn",
+    });
+  };
 
     return (
         <>
@@ -122,7 +129,7 @@ const Home = () => {
                             />
                         }
                     </Text>
-                    <IconHolder />
+                    <IconHolder checkResumeAnalytics={checkResumeAnalytics} />
                 </MotionFlex>
             </Flex>
         </>
@@ -131,7 +138,7 @@ const Home = () => {
 
 export default Home;
 
-const IconHolder = () => {
+const IconHolder = ({checkResumeAnalytics}) => {
 
     return (
         <>
@@ -170,7 +177,7 @@ const IconHolder = () => {
                 </Tooltip>
                 <Tooltip hasArrow label="Resume" placement="bottom" >
                     <span>
-                        <Link href={"/assets/resume.pdf"} isExternal>
+                        <Link onClick={checkResumeAnalytics} href={"/assets/resume.pdf"} isExternal>
                             <AiOutlineFile className={styles.iconHome} />
                         </Link>
                     </span>

@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 
 
 
-export default function Index() {
+export default function Index({analytics}) {
 
   return (
     <>
@@ -13,7 +13,7 @@ export default function Index() {
         <title>Home - Varad Rajopadhye</title>
       </Head>
       <NavBar />
-      <Home />
+      <Home analytics={analytics} />
       <Footer />
     </>
   )
