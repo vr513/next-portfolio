@@ -47,6 +47,7 @@ const GlobalStyle = ({ children }) => {
           // ::-webkit-scrollbar-thumb:hover {
           //   background: rgba(31, 30, 30, 0.726);
           // }
+          
         `}
       />
       {children}
