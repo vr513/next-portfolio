@@ -8,6 +8,7 @@ import customTheme from "../styles/theme";
 import { Global, css } from "@emotion/react";
 import { getAnalytics } from "firebase/analytics";
 import app from '../components/shared/firebase'
+import { Analytics } from '@vercel/analytics/react';
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -74,6 +75,7 @@ function MyApp({ Component, pageProps }) {
         >
           <GlobalStyle>
             <Component {...pageProps} analytics={analytics} />
+            <Analytics />
           </GlobalStyle>
         </ColorModeProvider>
       </ChakraProvider>

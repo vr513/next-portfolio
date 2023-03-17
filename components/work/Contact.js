@@ -90,7 +90,7 @@ const Contact = () => {
       });
 
       let response = await fetch(
-        `https://varad-rajopadhye.vercel.app/api/contact`,
+        `/api/contact`,
         {
           method: "POST",
           body: bodyContent,
