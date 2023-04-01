@@ -30,6 +30,7 @@
     "react-icons": "^4.4.0",
     "react-palette": "^1.0.2",
     "react-progressive-image": "^0.6.0",
+    "sharp": "^0.32.0",
     "sitemap": "^7.1.1",
     "typewriter-effect": "^2.18.2",
     "url-loader": "^4.1.1",

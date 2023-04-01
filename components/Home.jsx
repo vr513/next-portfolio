@@ -18,6 +18,7 @@ import styles from "./styles/Home.module.css";
 import Typewriter from "typewriter-effect";
 import Hand from "../assets/home/hand.webp";
 import { logEvent } from "firebase/analytics";
+import { MotionFlex } from "./motion";
 
 const Home = ({ analytics }) => {
   const { colorMode } = useColorMode();
