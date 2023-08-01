@@ -20,7 +20,7 @@ import Hand from "../assets/home/hand.webp";
 import { logEvent } from "firebase/analytics";
 import { MotionFlex } from "./motion";
 
-const Home = ({ analytics }) => {
+const Home = ({ analytics, resume }) => {
   const { colorMode } = useColorMode();
   const colorSecondary = {
     light: "gray.700",
@@ -150,7 +150,10 @@ const Home = ({ analytics }) => {
               />
             }
           </Text>
-          <IconHolder checkResumeAnalytics={checkResumeAnalytics} />
+          <IconHolder
+            resume={resume}
+            checkResumeAnalytics={checkResumeAnalytics}
+          />
         </MotionFlex>
       </Flex>
     </>
@@ -159,7 +162,7 @@ const Home = ({ analytics }) => {
 
 export default Home;
 
-const IconHolder = ({ checkResumeAnalytics }) => {
+const IconHolder = ({ checkResumeAnalytics, resume }) => {
   return (
     <>
       <Flex
@@ -200,11 +203,7 @@ const IconHolder = ({ checkResumeAnalytics }) => {
         </Tooltip>
         <Tooltip hasArrow label="Resume" placement="bottom">
           <span>
-            <Link
-              onClick={checkResumeAnalytics}
-              href={"/assets/resume.pdf"}
-              isExternal
-            >
+            <Link onClick={checkResumeAnalytics} href={resume} isExternal>
               <AiOutlineFile className={styles.iconHome} />
             </Link>
           </span>

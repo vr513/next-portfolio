@@ -17,13 +17,21 @@ import {
 import { useEffect } from "react";
 import { logEvent } from "firebase/analytics";
 
-export default function Index({ analytics }) {
+const PROJECT_ID = "4g70zppe";
+const DATASET = "production";
+
+export default function Index({ analytics, docs }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
     const showModalAfter = setTimeout(onOpen, 3000);
     return () => clearTimeout(showModalAfter);
   }, []);
+
+  const getUrlFromId = (ref) => {
+    const [_file, id, extension] = ref.split("-");
+    return `https://cdn.sanity.io/files/${PROJECT_ID}/${DATASET}/${id}.${extension}`;
+  };
 
   const closeLinkedin = () => {
     logEvent(analytics, "check_Linkedin_btn", {
@@ -50,7 +58,7 @@ export default function Index({ analytics }) {
           <ModalBody>
             <iframe
               style={{ borderRadius: "15px" }}
-              src="https://www.linkedin.com/embed/feed/update/urn:li:share:7036930741745700864"
+              src={docs.linkedinPostUrl}
               height="100%"
               width="100%"
               allowFullScreen
@@ -73,8 +81,30 @@ export default function Index({ analytics }) {
         </ModalContent>
       </Modal>
       <NavBar />
-      <Home analytics={analytics} />
+      <Home
+        resume={getUrlFromId(docs.resume.asset._ref)}
+        analytics={analytics}
+      />
       <Footer />
     </>
   );
+}
+
+const getDocLinks = async () => {
+  let response = await fetch(
+    "https://4g70zppe.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%27links%27%5D+",
+    {
+      method: "GET",
+    }
+  );
+
+  let data = await response.json();
+  return data.result[0];
+};
+
+export async function getServerSideProps(context) {
+  const docs = await getDocLinks();
+  return {
+    props: { docs }, // will be passed to the page component as props
+  };
 }
