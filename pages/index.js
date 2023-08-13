@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Home from "../components/Home";
+import Home from "../components/Home.jsx";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 

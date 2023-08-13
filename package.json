@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -37,7 +38,10 @@
     "use-sound": "^4.0.1"
   },
   "devDependencies": {
+    "@types/node": "^20.4.10",
+    "@types/react": "^18.2.20",
     "eslint": "8.17.0",
-    "eslint-config-next": "12.1.6"
+    "eslint-config-next": "12.1.6",
+    "typescript": "^5.1.6"
   }
 }
