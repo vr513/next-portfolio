@@ -4,12 +4,11 @@ import React from "react";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import BlogCard from "../../components/blogs/BlogCard";
-import {
-  PageSlideFade,
-  StaggerChildren,
-} from "../../components/page-transitions";
+import { client } from "../../utils/SanityClient";
 
-function index() {
+
+function Index({ blogsData }) {
+  console.log(blogsData);
   return (
     <>
       <Head>
@@ -32,7 +31,7 @@ function index() {
         px={"10vw"}
       >
         <SimpleGrid columns={[1, 2, 4]} spacing={5}>
-          <BlogCard />
+          {blogsData.map((blog) => <BlogCard image={blog.imageUrl} title={blog.displayTitle} url={blog.displayURL} key={blog.id} />)}
         </SimpleGrid>
       </Flex>
 
@@ -41,4 +40,27 @@ function index() {
   );
 }
 
-export default index;
+export default Index;
+
+const FetchAllBlogs = async () => {
+  const query = `*[_type == 'Blogs']{
+    "id": _id,
+    "displayTitle": displayTitle,
+    "displayURL": displayURL,
+    "imageUrl": displayImage.asset->url,
+  }`
+  try {
+    const blogData = await client.fetch(query);
+    return blogData;
+  } catch (error) {
+    console.error("Error fetching blog:", error);
+    return null;
+  }
+};
+
+export async function getServerSideProps() {
+  const data = await FetchAllBlogs();
+  return {
+    props: { blogsData: data }, // will be passed to the page component as props
+  };
+}

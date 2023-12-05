@@ -1,35 +1,28 @@
-import { Box, Heading, Link, useColorModeValue } from "@chakra-ui/react";
+import { Box, Heading, Image, Link } from "@chakra-ui/react";
 import React from "react";
-import { MotionBox } from "../../components/motion";
-import { item } from "../page-transitions";
-import firebaseImg from "../../assets/blogs/firebase/firebase.webp";
 
-const BlogCard = () => {
+const BlogCard = ({ title, url, image }) => {
   return (
     <>
-      <Link href="/blog/firebase-alternatives">
-      <Box
-        borderRadius={"12px"}
-        background={`url(${firebaseImg.src}),#fff`}
-        height={"15rem"}
-        backgroundPosition={"bottom"}
-        backgroundSize={"contain"}
-        backgroundRepeat={"no-repeat"}
-        w={"15rem"}
-        boxShadow={"0px 4px 20px 5px"}
-        transition={"transform 0.1s"}
-        _hover={{ transform: "translateY(-10px)" }}
-      >
-        <Heading
-          fontSize={"3xl"}
-          mt={"5px"}
-          ml={"10px"}
-          fontFamily={"'Crete Round', serif;"}
-          color={"black"}
+      <Link href={`/blog/${url}`}>
+        <Box
+          borderRadius={"12px"}
+          background={'#fff'}
+          w={"15rem"}
+          _hover={{ transform: "translateY(-10px)" }}
         >
-          Firebase alternatives
-        </Heading>
-      </Box>
+          <Image borderRadius={"12px"} src={image} />
+          <Heading
+            fontSize={"20px"}
+            pb={'5px'}
+            fontFamily={"'Crete Round', serif;"}
+            color={"black"}
+            w={'100%'}
+            textAlign={'center'}
+          >
+            {title}
+          </Heading>
+        </Box>
       </Link>
     </>
   );

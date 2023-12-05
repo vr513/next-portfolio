@@ -6,7 +6,7 @@ import NavBar from "../../components/NavBar";
 import { client } from "../../utils/SanityClient";
 import { PortableText } from "@portabletext/react";
 import customComponent from "../../components/blogs/CustomComponent";
-import { CiHeart, FaRegEye } from "react-icons/ci";
+import { CiHeart } from "react-icons/ci";
 import { FaHeart, FaEye } from "react-icons/fa";
 
 const Index = ({ blogData }) => {
@@ -107,7 +107,18 @@ const Index = ({ blogData }) => {
     return (
         <>
             <Head>
-                <title>Firebase Alternatives - Varad Rajopadhye</title>
+                <title>{data.blogTitle} - Varad Rajopadhye</title>
+                <meta name="description" content={data.metaDescription} />
+                <link rel="icon" href="/favicon.ico" />
+                <meta property="og:title" content={data.blogTitle} />
+                <meta property="og:description" content={data.metaDescription} />
+                <meta property="og:image" content={data.metaImage} />
+                <meta property="og:url" content={`https://www.varadrajopadhye.tech/blog/${data.displayURL}`}></meta>
+                <meta name="twitter:title" content={data.blogTitle} />
+                <meta name="twitter:description" content={data.metaDescription} />
+                <meta name="twitter:image" content={data.metaImage} />
+                <meta name="twitter:url" content={`https://www.varadrajopadhye.tech/blog/${data.displayURL}`}></meta>
+
             </Head>
             <NavBar />
             <Flex px={['5vw', "10vw"]} flexDirection={"column"}>
@@ -142,10 +153,10 @@ const Index = ({ blogData }) => {
 }
 
 const FetchBlog = async (blogURL) => {
-    console.log(blogURL)
     const query = `*[_type == 'Blogs' && displayURL == '${blogURL}'][0]{
     ...,
     "imageUrl": displayImage.asset->url,
+    "metaImage": metaImage.asset->url,
   }`
     try {
         const blogData = await client.fetch(query);
