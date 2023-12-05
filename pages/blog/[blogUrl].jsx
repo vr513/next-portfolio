@@ -10,7 +10,6 @@ import { CiHeart } from "react-icons/ci";
 import { FaHeart, FaEye } from "react-icons/fa";
 
 const Index = ({ blogData }) => {
-    console.log(blogData)
     const [liked, setLiked] = useState(false);
     const [data, setData] = useState(blogData);
 
@@ -84,7 +83,6 @@ const Index = ({ blogData }) => {
                 }
             );
             let res = await response.json();
-            console.log(res)
             let viewedBlogs = JSON.parse(localStorage.getItem('views'));
             if (!viewedBlogs) {
                 viewedBlogs = {};
@@ -99,7 +97,6 @@ const Index = ({ blogData }) => {
     useEffect(() => {
         const viewedBlogs = JSON.parse(localStorage.getItem('views')) || {};
         if (viewedBlogs[data._id] === null || viewedBlogs[data._id] === undefined) {
-            console.log(viewedBlogs)
             handleUpdateViews();
         }
     }, [])

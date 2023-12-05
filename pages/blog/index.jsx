@@ -8,7 +8,6 @@ import { client } from "../../utils/SanityClient";
 
 
 function Index({ blogsData }) {
-  console.log(blogsData);
   return (
     <>
       <Head>
