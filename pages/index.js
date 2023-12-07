@@ -16,9 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { logEvent } from "firebase/analytics";
-
-const PROJECT_ID = "4g70zppe";
-const DATASET = "production";
+import { client } from "../utils/SanityClient";
 
 export default function Index({ analytics, docs }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -27,11 +25,6 @@ export default function Index({ analytics, docs }) {
     const showModalAfter = setTimeout(onOpen, 3000);
     return () => clearTimeout(showModalAfter);
   }, []);
-
-  const getUrlFromId = (ref) => {
-    const [_file, id, extension] = ref.split("-");
-    return `https://cdn.sanity.io/files/${PROJECT_ID}/${DATASET}/${id}.${extension}`;
-  };
 
   const closeLinkedin = () => {
     logEvent(analytics, "check_Linkedin_btn", {
@@ -64,6 +57,7 @@ export default function Index({ analytics, docs }) {
               allowFullScreen
               frameborder="0"
               title="Embedded post"
+              loading="lazy"
             ></iframe>
           </ModalBody>
 
@@ -81,30 +75,30 @@ export default function Index({ analytics, docs }) {
         </ModalContent>
       </Modal>
       <NavBar />
-      <Home
-        resume={getUrlFromId(docs.resume.asset._ref)}
-        analytics={analytics}
-      />
+      <Home resume={docs.resume} analytics={analytics} />
       <Footer />
     </>
   );
 }
 
 const getDocLinks = async () => {
-  let response = await fetch(
-    "https://4g70zppe.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%27links%27%5D+",
-    {
-      method: "GET",
-    }
-  );
-
-  let data = await response.json();
-  return data.result[0];
+  const query = `*[_type == 'links'][0]{
+    ...,
+    "resume": resume.asset->url,
+  }`;
+  try {
+    const docData = await client.fetch(query);
+    return docData;
+  } catch (error) {
+    console.error("Error fetching blog:", error);
+    return null;
+  }
 };
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const docs = await getDocLinks();
   return {
     props: { docs }, // will be passed to the page component as props
+    revalidate: 3600,
   };
 }
