@@ -63,3 +63,4 @@ export async function getServerSideProps() {
     props: { blogsData: data }, // will be passed to the page component as props
   };
 }
+export const unstable_revalidate = 21600; // In seconds. Adjust as needed based on your caching strategy.

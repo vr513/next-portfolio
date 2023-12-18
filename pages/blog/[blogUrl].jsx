@@ -174,3 +174,5 @@ export async function getServerSideProps({ query }) {
 
 
 export default Index
+
+export const unstable_revalidate = 21600; // In seconds. Adjust as needed based on your caching strategy.

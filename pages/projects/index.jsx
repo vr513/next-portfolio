@@ -21,7 +21,7 @@ const projects = () => {
     const handleClick = () => {
         play({ id: "off" });
     }
-    return(
+    return (
         <>
             <Head>
                 <title>Projects - Varad Rajopadhye</title>
@@ -47,7 +47,7 @@ const projects = () => {
                             <Offline />
                         </TabPanel>
                         <TabPanel>
-                            <Heading fontSize={[25,40,40]} >Stay Tuned for GitHub APi integration</Heading>
+                            <Heading fontSize={[25, 40, 40]} >Stay Tuned for GitHub APi integration</Heading>
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
@@ -58,3 +58,5 @@ const projects = () => {
 }
 
 export default projects;
+
+export const unstable_revalidate = 21600; // In seconds. Adjust as needed based on your caching strategy.

@@ -14,12 +14,14 @@ const contact = () => {
                 <title>Contact - Varad Rajopadhye</title>
             </Head>
             <NavBar />
-                <Flex alignItems={"center"} justifyContent={"center"} flexDirection={'column'}>
-                    <Contact />
-                </Flex>
+            <Flex alignItems={"center"} justifyContent={"center"} flexDirection={'column'}>
+                <Contact />
+            </Flex>
             <Footer />
         </>
     )
 }
 
 export default contact
+
+export const unstable_revalidate = 21600; // In seconds. Adjust as needed based on your caching strategy.

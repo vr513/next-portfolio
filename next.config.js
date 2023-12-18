@@ -1,9 +1,13 @@
 module.exports = {
-  webpack(config, options) {
+  experimental: {
+    plugins: [["styled-components", { ssr: true }]],
+    webpack5: true,
+  },
+  webpack: (config, { webpack }) => {
     config.module.rules.push({
       test: /\.mp3$/,
       use: {
-        loader: 'url-loader',
+        loader: "url-loader",
       },
     });
     return config;
@@ -11,5 +15,4 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  "plugins": [["styled-components", { "ssr": true }]]
-}
+};
