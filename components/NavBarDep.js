@@ -48,66 +48,64 @@ const Container = ({ children }) => {
         dark: 'gray.900'
     }
 
-    return (
-        <>
-            <StickyNav
-                flexDirection="row"
-                justifyContent="space-between"
-                alignItems="center"
-                width="100%"
-                bg={navColor[colorMode]}
-                as="nav"
-                px={"10vw"}
-                // px={[80, 160, 160]}
-                paddingTop={4}
-                paddingBottom={2}
-                mb={[0, 0, 8]}
-                mx="auto"
-            >
-                <Box>
-                    <Avatar src={"https://varadrajopadhye.netlify.app/assets/img/varadAvatar.png"} href="/" marginX={[1, 2, 4]} size={"md"} name="Varad Rajopadhye" />
-                    <Link href="/" passHref>
-                        <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
-                            Home
-                        </Button>
-                    </Link>
-                    <Link href="/about" passHref>
-                        <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
-                            Blog
-                        </Button>
-                    </Link>
-                    <Link href="/work" passHref>
-                        <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
-                            Work
-                        </Button>
-                    </Link>
-                    <Link href="/story" passHref>
-                        <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
-                            Achievements
-                        </Button>
-                    </Link>
-                    <Link href="/projects" passHref>
-                        <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
-                            Projects
-                        </Button>
-                    </Link>
-                </Box>
-                <Box>
-                    <DarkModeSwitch />
-                    <Link href="https://github.com/vr513">
-                        <a>
-                            <IconButton
-                                marginX={'1vw'}
-                                icon={<FaGithub />}
-                                aria-label={"Github Account"}
-                                bg={navColor[colorMode]}
-                            />
-                        </a>
-                    </Link>
-                </Box>
-            </StickyNav >
-        </>
-    )
+    return <>
+        <StickyNav
+            flexDirection="row"
+            justifyContent="space-between"
+            alignItems="center"
+            width="100%"
+            bg={navColor[colorMode]}
+            as="nav"
+            px={"10vw"}
+            // px={[80, 160, 160]}
+            paddingTop={4}
+            paddingBottom={2}
+            mb={[0, 0, 8]}
+            mx="auto"
+        >
+            <Box>
+                <Avatar src={"https://varadrajopadhye.netlify.app/assets/img/varadAvatar.png"} href="/" marginX={[1, 2, 4]} size={"md"} name="Varad Rajopadhye" />
+                <Link href="/" passHref legacyBehavior>
+                    <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
+                        Home
+                    </Button>
+                </Link>
+                <Link href="/about" passHref legacyBehavior>
+                    <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
+                        Blog
+                    </Button>
+                </Link>
+                <Link href="/work" passHref legacyBehavior>
+                    <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
+                        Work
+                    </Button>
+                </Link>
+                <Link href="/story" passHref legacyBehavior>
+                    <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
+                        Achievements
+                    </Button>
+                </Link>
+                <Link href="/projects" passHref legacyBehavior>
+                    <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
+                        Projects
+                    </Button>
+                </Link>
+            </Box>
+            <Box>
+                <DarkModeSwitch />
+                <Link href="https://github.com/vr513">
+
+                    <IconButton
+                        marginX={'1vw'}
+                        icon={<FaGithub />}
+                        aria-label={"Github Account"}
+                        bg={navColor[colorMode]}
+                    />
+
+                </Link>
+            </Box>
+        </StickyNav >
+    </>;
 }
 
 export default Container

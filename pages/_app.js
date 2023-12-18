@@ -7,8 +7,8 @@ import {
 import customTheme from "../styles/theme";
 import { Global, css } from "@emotion/react";
 import { getAnalytics } from "firebase/analytics";
-import app from '../components/shared/firebase'
-import { Analytics } from '@vercel/analytics/react';
+import app from "../components/shared/firebase";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -48,7 +48,6 @@ const GlobalStyle = ({ children }) => {
           // ::-webkit-scrollbar-thumb:hover {
           //   background: rgba(31, 30, 30, 0.726);
           // }
-          
         `}
       />
       {children}
@@ -57,12 +56,11 @@ const GlobalStyle = ({ children }) => {
 };
 
 function MyApp({ Component, pageProps }) {
-
-  const [analytics , setAnalytics] = useState(null);
+  const [analytics, setAnalytics] = useState(null);
 
   useEffect(() => {
     setAnalytics(getAnalytics(app));
-  },[])
+  }, []);
 
   return (
     <>
@@ -75,7 +73,7 @@ function MyApp({ Component, pageProps }) {
         >
           <GlobalStyle>
             <Component {...pageProps} analytics={analytics} />
-            <Analytics />
+            <SpeedInsights />
           </GlobalStyle>
         </ColorModeProvider>
       </ChakraProvider>

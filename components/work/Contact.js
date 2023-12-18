@@ -110,110 +110,108 @@ const Contact = () => {
     }
   };
 
-  return (
-    <>
+  return <>
+    <Flex
+      flexDirection={["column", "row", "row"]}
+      width={["85vw", "75vw", "60vw"]}
+      marginTop={"2rem"}
+      className={"test"}
+    >
       <Flex
-        flexDirection={["column", "row", "row"]}
-        width={["85vw", "75vw", "60vw"]}
-        marginTop={"2rem"}
-        className={"test"}
-      >
-        <Flex
-          width={["100%", "50%", "50%"]}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
-          <Heading
-            bgGradient="linear(to-l, #7928CA, #FF0080)"
-            bgClip="text"
-            mb={["3rem", null, null]}
-          >
-            Let's get in touch
-          </Heading>
-        </Flex>
-        <Box
-          width={["100%", "50%", "50%"]}
-          bg={formColor[colorMode]}
-          padding={"2rem"}
-          borderRadius="25px"
-        >
-          <form>
-            <Stack spacing={4}>
-              <FormControl
-                id="name"
-                name={"name"}
-                borderColor={inputBorder[colorMode]}
-                required
-              >
-                <FormLabel>Name</FormLabel>
-                <Input
-                  value={name}
-                  type="text"
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </FormControl>
-              <FormControl
-                id="email"
-                name={"email"}
-                borderColor={inputBorder[colorMode]}
-                required
-              >
-                <FormLabel>Email</FormLabel>
-                <Input
-                  value={email}
-                  type="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </FormControl>
-              <FormControl
-                id="message"
-                name={"message"}
-                borderColor={inputBorder[colorMode]}
-                required
-              >
-                <FormLabel>Message</FormLabel>
-                <Textarea
-                  value={reason}
-                  type="text"
-                  size="sm"
-                  onChange={(e) => setReason(e.target.value)}
-                />
-              </FormControl>
-              <Button
-                bg={"blue.400"}
-                color={"white"}
-                _hover={{
-                  bg: "blue.500",
-                }}
-                onClick={sendEmail}
-                disabled={submitting}
-              >
-                Send Message
-              </Button>
-            </Stack>
-          </form>
-        </Box>
-      </Flex>
-      <Flex
-        width={"60vw"}
-        mt={["2rem", "5rem", "5rem"]}
-        flexDirection={"column"}
+        width={["100%", "50%", "50%"]}
         alignItems={"center"}
         justifyContent={"center"}
       >
-        <Heading fontSize={[15, "2xl", "3xl"]}>
-          Click here to check my Resume
+        <Heading
+          bgGradient="linear(to-l, #7928CA, #FF0080)"
+          bgClip="text"
+          mb={["3rem", null, null]}
+        >
+          Let's get in touch
         </Heading>
-        <Link href={"/assets/resume.pdf"}>
-          <a>
-            <Button colorScheme="blue" mt={"20px"}>
-              Resume
-            </Button>
-          </a>
-        </Link>
       </Flex>
-    </>
-  );
+      <Box
+        width={["100%", "50%", "50%"]}
+        bg={formColor[colorMode]}
+        padding={"2rem"}
+        borderRadius="25px"
+      >
+        <form>
+          <Stack spacing={4}>
+            <FormControl
+              id="name"
+              name={"name"}
+              borderColor={inputBorder[colorMode]}
+              required
+            >
+              <FormLabel>Name</FormLabel>
+              <Input
+                value={name}
+                type="text"
+                onChange={(e) => setName(e.target.value)}
+              />
+            </FormControl>
+            <FormControl
+              id="email"
+              name={"email"}
+              borderColor={inputBorder[colorMode]}
+              required
+            >
+              <FormLabel>Email</FormLabel>
+              <Input
+                value={email}
+                type="email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </FormControl>
+            <FormControl
+              id="message"
+              name={"message"}
+              borderColor={inputBorder[colorMode]}
+              required
+            >
+              <FormLabel>Message</FormLabel>
+              <Textarea
+                value={reason}
+                type="text"
+                size="sm"
+                onChange={(e) => setReason(e.target.value)}
+              />
+            </FormControl>
+            <Button
+              bg={"blue.400"}
+              color={"white"}
+              _hover={{
+                bg: "blue.500",
+              }}
+              onClick={sendEmail}
+              disabled={submitting}
+            >
+              Send Message
+            </Button>
+          </Stack>
+        </form>
+      </Box>
+    </Flex>
+    <Flex
+      width={"60vw"}
+      mt={["2rem", "5rem", "5rem"]}
+      flexDirection={"column"}
+      alignItems={"center"}
+      justifyContent={"center"}
+    >
+      <Heading fontSize={[15, "2xl", "3xl"]}>
+        Click here to check my Resume
+      </Heading>
+      <Link href={"/assets/resume.pdf"}>
+
+        <Button colorScheme="blue" mt={"20px"}>
+          Resume
+        </Button>
+
+      </Link>
+    </Flex>
+  </>;
 };
 
 export default Contact;

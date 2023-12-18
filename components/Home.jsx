@@ -76,8 +76,8 @@ const Home = ({ analytics, resume }) => {
                   Hey!{" "}
                   <Image
                     src={Hand}
-                    height={"50px"}
-                    width={"50px"}
+                    height={"50"}
+                    width={"50"}
                     alt={"Waving hand gif"}
                   />
                 </Heading>
