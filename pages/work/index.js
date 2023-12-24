@@ -16,8 +16,9 @@ import Certificates from "../../components/certifications/Certificates";
 import useSound from "use-sound";
 
 import lightSwitch from "../../assets/audios/lightswitch.mp3";
+import { client } from "../../utils/SanityClient";
 
-const Work = () => {
+const Work = ({ certificateData }) => {
   const [play] = useSound(lightSwitch, {
     volume: 0.05,
     sprite: {
@@ -78,7 +79,7 @@ const Work = () => {
                 justifyContent={"center"}
                 flexDirection={"column"}
               >
-                <Certificates />
+                <Certificates data={certificateData} />
               </Flex>
             </TabPanel>
             <TabPanel>
@@ -97,6 +98,27 @@ const Work = () => {
     </>
   );
 };
+
+const getCertificates = async () => {
+  const query = `*[_type == 'certificates']{
+    ...,
+    "image": image.asset->url,
+  }`;
+  try {
+    const docData = await client.fetch(query);
+    return docData;
+  } catch (error) {
+    console.error("Error fetching certificates:", error);
+    return null;
+  }
+};
+
+export async function getServerSideProps() {
+  const data = await getCertificates();
+  return {
+    props: { certificateData: data }, // will be passed to the page component as props
+  };
+}
 
 export default Work;
 

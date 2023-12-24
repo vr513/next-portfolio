@@ -4,11 +4,6 @@ import {
   Avatar,
   HStack,
   IconButton,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
   useDisclosure,
   useColorModeValue,
   Stack,
@@ -23,18 +18,19 @@ import DarkModeSwitch from "./DarkModeSwitch";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import dp from "../assets/home/dp.webp";
-import verifyBlue from "../assets/home/verify.png";
-import { MotionFlex } from "./motion";
-import { BsPatchCheck , BsPatchCheckFill } from "react-icons/bs";
+import { BsPatchCheck, BsPatchCheckFill } from "react-icons/bs";
+import { useRouter } from "next/router";
 
-const avataarLink =
-  "https://varadrajopadhye.netlify.app/assets/img/varadAvatar.png";
+const navRouteColors = {
+  '/': '#FE0080',
+  '/blog': '#d60884',
+  '/work': '#ae1187',
+  '/projects': '#8b188a',
+  '/contact': '#6e1e8d',
+}
 
-const NavLink = ({name , route}) => {
-  let color = "#FE0080";
-  if(name === "Home" || name === 'Blog') color = "#FE0080";
-  else if(name === 'Work' ) color = "#AD18AD"
-  else color = "#6E1E8D";
+const NavLink = ({ name, route }) => {
+  const router = useRouter()
   return (
     (<Link
       px={2}
@@ -50,14 +46,16 @@ const NavLink = ({name , route}) => {
       <Box
         transition={"transform .2s"}
         fontWeight={600}
-        _hover={{ transform: "scale(1.2)", color: color }}
+        _hover={{ transform: "scale(1.2)", color: navRouteColors[route] }}
         fontFamily={"Inter"}
+        color={router.pathname === route ? navRouteColors[route] : null}
+        transform={router.pathname === route ? "scale(1.2)" : null}
       >
         {name}
       </Box>
 
     </Link>)
-  );  
+  );
 }
 
 export default function NavBar() {
@@ -77,12 +75,12 @@ export default function NavBar() {
           width={"100% !important"}
           position={"relative"}
         >
-          
+
           <Flex
             position={"absolute"}
             left={"0px"}
             top={"-50% !important"}
-            bottom={['0px','initial']}
+            bottom={['0px', 'initial']}
             alignItems={"center"}
             flexDirection={"row"}
             gap={3}
@@ -103,7 +101,7 @@ export default function NavBar() {
                 >
                   Varad
                 </Text>
-                <Icon as={BsPatchCheckFill} color={useColorModeValue('cyan.600','cyan')} marginLeft={'0px !important'}/>
+                <Icon as={BsPatchCheckFill} color={useColorModeValue('cyan.600', 'cyan')} marginLeft={'0px !important'} />
               </HStack>
               <HStack mt={'0px !important'}>
                 <Icon as={BsPatchCheck} color={'grey'} />

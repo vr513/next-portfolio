@@ -1,31 +1,26 @@
 import Card from "./Card"
 import {
-    Stack,
-    Heading,
     SimpleGrid,
-    Flex
 } from '@chakra-ui/react';
-import data from "./certificateData";
 
-import UD from "../../assets/work/udemy.webp"
-const Certificates = () => {
+const Certificates = (data) => {
     return (
         <>
-        <SimpleGrid columns={[1, 2, 4]} spacing={4} mt={8}>
-            {data.map((item,index) => (
-                <Card 
-                    image={item.image}
-                    company={item.company}
-                    title={item.title}
-                    instructor={item.instructor}
-                    completed={item.completed}
-                    key={index}
-                    certificateLink={item.certificateLink}
-            />
-            ))}
-        </SimpleGrid>
+            <SimpleGrid columns={[1, 2, 4]} spacing={4} mt={8}>
+                {data && data.data && Array.isArray(data.data) && data.data.map((item, index) => (
+                    <Card
+                        image={item.image}
+                        company={item.company}
+                        title={item.title}
+                        instructor={item.instructor}
+                        completed={item.completed}
+                        key={index}
+                        certificateLink={item.certificateLink}
+                    />
+                ))}
+            </SimpleGrid>
         </>
     )
 }
 
-export default Certificates
+export default Certificates;
