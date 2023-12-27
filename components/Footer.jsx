@@ -1,17 +1,16 @@
 import {
     Box,
-    chakra,
     Container,
-    Link,
     Stack,
     Text,
     useColorModeValue,
     VisuallyHidden,
 } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa';
+import UserIcon from "../assets/varadAvatar.webp";
 import { HiOutlineMail } from 'react-icons/hi'
-import { Avatar } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import Image from 'next/image';
 
 const SocialButton = (props) => {
     return (
@@ -40,6 +39,7 @@ const SocialButton = (props) => {
 };
 
 export default function Footer() {
+    console.log(UserIcon);
     return (
         <Box
             bg={useColorModeValue('gray.50', 'gray.900')}
@@ -54,13 +54,19 @@ export default function Footer() {
                 spacing={4}
                 justify={{ base: 'center', md: 'space-between' }}
                 align={{ base: 'center', md: 'center' }}>
-                <Avatar
-                    size={'md'}
-                    src={'https://varadrajopadhye.netlify.app/assets/img/varadAvatar.png'}
-                    href="/"
-                    marginX={[1, 2, 4]} name="Varad Rajopadhye"
-                />
-                <Text>© 2023. All rights reserved</Text>
+                <Box
+                    w={10}
+                    h={10}
+                    marginX={[1, 2, 4]}
+                >
+                    <Image
+                        src={UserIcon}
+                        alt={"Varad's avataar"}
+                        name="Varad Rajopadhye"
+                    />
+                </Box>
+
+                <Text>© {new Date().getFullYear()}. All rights reserved</Text>
                 <Stack direction={'row'} spacing={6}>
                     <SocialButton
                         label="Instagram" link="https://www.instagram.com/vr._513" icon={<FaInstagram />}
