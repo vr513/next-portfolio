@@ -14,7 +14,7 @@ const contact = () => {
                 <title>Contact - Varad Rajopadhye</title>
             </Head>
             <NavBar />
-            <Flex alignItems={"center"} justifyContent={"center"} flexDirection={'column'}>
+            <Flex alignItems={"center"} justifyContent={"center"} flexDirection={'column'} h='78vh' >
                 <Contact />
             </Flex>
             <Footer />

@@ -39,7 +39,6 @@ const SocialButton = (props) => {
 };
 
 export default function Footer() {
-    console.log(UserIcon);
     return (
         <Box
             bg={useColorModeValue('gray.50', 'gray.900')}

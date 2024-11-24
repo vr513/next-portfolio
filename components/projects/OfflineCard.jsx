@@ -113,7 +113,6 @@ const OfflineCard = (props) => {
               >
                 <AspectRatio
                   ratio={1.85 / 1}
-                  maxW="400px"
                   w="100%"
                   borderBottomWidth="1px"
                   borderColor={useColorModeValue("gray.100", "gray.700")}

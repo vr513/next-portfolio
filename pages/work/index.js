@@ -44,6 +44,7 @@ const Work = ({ certificateData }) => {
         mb={[0, 0, 8]}
         mx="auto"
         maxW={"100vw"}
+        minH={"74vh"}
       >
         <Tabs variant="soft-rounded" colorScheme="blue">
           <TabList justifyContent={"center"} maxW={"100vw"}>

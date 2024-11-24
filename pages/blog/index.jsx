@@ -21,7 +21,7 @@ function Index({ blogsData }) {
       </Head>
       <NavBar />
       <Flex
-        minH={"70vh"}
+        minH={"78vh"}
         paddingTop={4}
         paddingBottom={2}
         flexDirection={"row"}
